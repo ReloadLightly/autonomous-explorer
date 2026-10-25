@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "milestone": 5,
+  "name": "Decision-Making and Viewpoint Exploration",
+  "created_utc": "2026-10-25T11:50:30.689409+00:00",
+  "python": "3.13.5",
+  "numpy": "2.5.4",
+  "state_codes": {
+    "exploring": 0,
+    "returning": 1,
+    "braking": 2,
+    "waiting": 3,
+    "complete": 4,
+    "aborted": 5
+  },
+  "coverage": "modelled visibility footprint from estimated poses with accepted landmark packets",
+  "control": "waypoint heading/speed regulation defined at zero; clipped held (acceleration,yaw rate)",
+  "runs": [
+    {
+      "name": "nominal__7__unguarded",
+      "log": "nominal__7__unguarded.npz",
+      "metadata": "nominal__7__unguarded.json"
+    },
+    {
+      "name": "nominal__7__guarded",
+      "log": "nominal__7__guarded.npz",
+      "metadata": "nominal__7__guarded.json"
+    },
+    {
+      "name": "temporary_outage__7__unguarded",
+      "log": "temporary_outage__7__unguarded.npz",
+      "metadata": "temporary_outage__7__unguarded.json"
+    },
+    {
+      "name": "temporary_outage__7__guarded",
+      "log": "temporary_outage__7__guarded.npz",
+      "metadata": "temporary_outage__7__guarded.json"
+    },
+    {
+      "name": "persistent_outage__7__unguarded",
+      "log": "persistent_outage__7__unguarded.npz",
+      "metadata": "persistent_outage__7__unguarded.json"
+    },
+    {
+      "name": "persistent_outage__7__guarded",
+      "log": "persistent_outage__7__guarded.npz",
+      "metadata": "persistent_outage__7__guarded.json"
+    },
+    {
+      "name": "nominal__19__unguarded",
+      "log": "nominal__19__unguarded.npz",
+      "metadata": "nominal__19__unguarded.json"
+    },
+    {
+      "name": "nominal__19__guarded",
+      "log": "nominal__19__guarded.npz",
+      "metadata": "nominal__19__guarded.json"
+    },
+    {
+      "name": "temporary_outage__19__unguarded",
+      "log": "temporary_outage__19__unguarded.npz",
+      "metadata": "temporary_outage__19__unguarded.json"
+    },
+    {
+      "name": "temporary_outage__19__guarded",
+      "log": "temporary_outage__19__guarded.npz",
+      "metadata": "temporary_outage__19__guarded.json"
+    },
+    {
+      "name": "persistent_outage__19__unguarded",
+      "log": "persistent_outage__19__unguarded.npz",
+      "metadata": "persistent_outage__19__unguarded.json"
+    },
+    {
+      "name": "persistent_outage__19__guarded",
+      "log": "persistent_outage__19__guarded.npz",
+      "metadata": "persistent_outage__19__guarded.json"
+    },
+    {
+      "name": "nominal__41__unguarded",
+      "log": "nominal__41__unguarded.npz",
+      "metadata": "nominal__41__unguarded.json"
+    },
+    {
+      "name": "nominal__41__guarded",
+      "log": "nominal__41__guarded.npz",
+      "metadata": "nominal__41__guarded.json"
+    },
+    {
+      "name": "temporary_outage__41__unguarded",
+      "log": "temporary_outage__41__unguarded.npz",
+      "metadata": "temporary_outage__41__unguarded.json"
+    },
+    {
+      "name": "temporary_outage__41__guarded",
+      "log": "temporary_outage__41__guarded.npz",
+      "metadata": "temporary_outage__41__guarded.json"
+    },
+    {
+      "name": "persistent_outage__41__unguarded",
+      "log": "persistent_outage__41__unguarded.npz",
+      "metadata": "persistent_outage__41__unguarded.json"
+    },
+    {
+      "name": "persistent_outage__41__guarded",
+      "log": "persistent_outage__41__guarded.npz",
+      "metadata": "persistent_outage__41__guarded.json"
+    }
+  ],
+  "source_sha256": {
+    "__init__.py": "494e447362e5b323a0a4a2d3798571888d53887eac80236e6899c150516b421e",
+    "control.py": "9447f379c981b2a593d334ace76cd4d903c5ac0c51ee476df6bd58bf6f8bdf2e",
+    "evidence.py": "a74b20aa100fb4fc53ee509573ea79fd88040adf80bddee9e33910c7e1418cec",
+    "exploration_evidence.py": "0881d5a0de16786e2fccf0e7c33b5e1ac34494cda70dd99d58c63a71a029cbfc",
+    "localization.py": "190413315f63ffe2d22d2f5246d6653a4285599677ddc4152c6f379b33d30903",
+    "localization_evidence.py": "e7d46ac93df220e65a0054a2d7875a839d45402508cc14e13c2b6d0a618680c0",
+    "mission.py": "0cac1069d19bb036df1948ece5ed3c73de8ab4e01f68ec777c809fc0a0c6f79f",
+    "model.py": "3574ec24540b2e3162a768149426eb3be9ab05200a9975b1c5c386bd978cad71",
+    "navigation_evidence.py": "1234b425f185ab69bafaf2289d129e51c1eda888411e072994034a97840addae",
+    "path_reference.py": "13ff6f98d99900d2a6de199032d3b9169352efb5457c709253e71e110824e72f",
+    "planning.py": "dc9a2a30580b7d335f0610c1ef9d20822be1cfee8a2fec60340803bfaa752a46",
+    "reference.py": "9548d47ab847e21254dd2c061f47ad447e6c6ffd0ec6b542a697e41d478946c3",
+    "sensors.py": "2fb61a7420f407dea3c375a9c77ff23fadf6d17f7b0a6b4a515eef9d2596bb11",
+    "simulation.py": "2e404d032ac14c4ce72e0f4d5346cf30c5cbea87b7027e8b9032a4d38375a189",
+    "slam.py": "c3c84a0cb5c0fafb4e68253e14884c3449c25e211500b6158c82c7680a73329b",
+    "slam_evidence.py": "b657319ee7635f805f042698225ab9bd521dc29f59c0a7911a1ff5c810e6df10"
+  },
+  "files_sha256": {
+    "config.json": "a6579f177847cc66eddf6b2e885f77f492cda51c972530fbb825cf5d1356990d",
+    "metrics.json": "9ed719c6a10dad3a756161c25b0db3824476d878de0c00bcd53528f1bbbd833d",
+    "nominal__19__guarded.json": "c32a0d6cdce4a616275f1ca60ecc210726c3b1977bb9a01c0eac00c4b89b5c2c",
+    "nominal__19__guarded.npz": "a8eb8262a2ed79389fa24b81792c801481985682e77ca7d755149680c019da70",
+    "nominal__19__unguarded.json": "6ac62b79b039208b53e13da6c7724eeacde43f393eb0808357ecb46e96048da8",
+    "nominal__19__unguarded.npz": "a8eb8262a2ed79389fa24b81792c801481985682e77ca7d755149680c019da70",
+    "nominal__41__guarded.json": "c7f131128ed54dc97ef44b08a5de34fd9ea306f9223aed61b495ffe2a401efeb",
+    "nominal__41__guarded.npz": "8c73ee2d70c2ff57fa76919a9570f855139484d575496f26478829154d2cf2ec",
+    "nominal__41__unguarded.json": "f55441f842f7260a30080509449a67dcaa707f7e30bf76a404883c941643aa4e",
+    "nominal__41__unguarded.npz": "8c73ee2d70c2ff57fa76919a9570f855139484d575496f26478829154d2cf2ec",
+    "nominal__7__guarded.json": "7fb3bdc86a66d7513efaba74f372f5f08bd42f1eeee839c3a3a703da8de9c354",
+    "nominal__7__guarded.npz": "13a57b57ed2d553721e6e00d12f481f4888903485c239d5dbb6faff24500ac2e",
+    "nominal__7__unguarded.json": "6041a38b0af62ceda002e6d9c2515fd1c792927338209469dec64cfe906eafa4",
+    "nominal__7__unguarded.npz": "13a57b57ed2d553721e6e00d12f481f4888903485c239d5dbb6faff24500ac2e",
+    "persistent_outage__19__guarded.json": "af7dad2f89ff36e9d91e10efff99d4e40a42fc45403c60196acb5e954bbf6409",
+    "persistent_outage__19__guarded.npz": "25e6cc9906ad7d83089cf9a6d5f6a3ed4b759a720fb441e745e74de89b803f55",
+    "persistent_outage__19__unguarded.json": "5972741849bf17770e70c32623368d97a37e8490e74c600f58aec642fef30841",
+    "persistent_outage__19__unguarded.npz": "48a6f102d1a6768f1891eeec833263648a4c051536502faf15d52e11764f6988",
+    "persistent_outage__41__guarded.json": "bcec2dc07a5fa431b28355efaaa2cfdc56b87784daffc77ac941d8374707b730",
+    "persistent_outage__41__guarded.npz": "d55877f44eda1ac65af3b1e7678598e0c3bbd2fc95df4380b84cd24992df552f",
+    "persistent_outage__41__unguarded.json": "26c025f72a4e0bf63acc4523250a0a82ce7c8aa043d5925caf9510056fa07c21",
+    "persistent_outage__41__unguarded.npz": "d4385b11e2c8085bbabc3b524eec1932826cf939a518a968a343006ed193635b",
+    "persistent_outage__7__guarded.json": "2f9344eef4cd4b5271d09ea33ba967822a7c11232a77a19ce5d28c81a0487130",
+    "persistent_outage__7__guarded.npz": "199eaa7ec90233aad847563eec258735376a9d3438f7e72bfbba024a6f2c2a57",
+    "persistent_outage__7__unguarded.json": "97c83757ec757c9af8ca27e7c669b4eebed6f837f58fd239408ee5181a7e1294",
+    "persistent_outage__7__unguarded.npz": "286a782a1a967cd8a8949d69dc5b335852967d61b8f5dae1fe7229cd014ea1da",
+    "seed_19_inputs.npz": "076879c112f6d579e5c72f6e26d3df641631cfc7ed682cb21b614b08554d4000",
+    "seed_41_inputs.npz": "1cf57f9ea2b212ac0cc7c66c5a93b962634c3a4f783ddf7e2e6b50f7d40fff31",
+    "seed_7_inputs.npz": "9b4e1408f1df2cb60a2b466c2dbc9907f218f065da4e508cb2c7f5a07c0688dc",
+    "summary.md": "15a9cfc36e718464b339c64d689f3c9c9730236662c572bcb86bdbb6ca9af031",
+    "temporary_outage__19__guarded.json": "cf8bdeb5fca1528a743ca25654d472a4dc38422e9116e7233183f22b09b943ae",
+    "temporary_outage__19__guarded.npz": "9d6435ebd382e63098ba9435ee407e2f3ceeb96ee00157625cef2a37be47b3dd",
+    "temporary_outage__19__unguarded.json": "a47ca88980983ad74f67ca9b57e0c5d433b28c76dd3c1a718c59ef8f42065ab8",
+    "temporary_outage__19__unguarded.npz": "c110edb4941848104b1a3e03ee7c2e7e5318d31a2a29fa0bef13a6f6b88145dc",
+    "temporary_outage__41__guarded.json": "5741abec4264b70ff3a939c8b4fb89851ad3833cb7b7238a7e704142ca636b86",
+    "temporary_outage__41__guarded.npz": "832fa16170ea806054f075d98d2f8d38d5636ea8450f52a63d8f6be8ab363692",
+    "temporary_outage__41__unguarded.json": "a5365fea95e3a911e4169cfa0abc5edd1e361f80fb8bb495612520f1b2fb73ae",
+    "temporary_outage__41__unguarded.npz": "2d312804b559601098a945a16d84fbf3a6136962d5e35077de32279cfed61095",
+    "temporary_outage__7__guarded.json": "83976dabc54a80e5932e7072375fd343d2525f2fce56cda7ef2da33bbb5a89cd",
+    "temporary_outage__7__guarded.npz": "48856e7d864c892e5492c0668532048850343eccfb910a1e22025842d8cf105c",
+    "temporary_outage__7__unguarded.json": "d5a43ba112c546247e2dc61d9a4bdad1f2242e55170f622a55d41695395f7fd1",
+    "temporary_outage__7__unguarded.npz": "32bfad3fba4c6cb431d03ab1a9eb4f3dcc9be5fed03ca790294768cad948129b"
+  }
+}

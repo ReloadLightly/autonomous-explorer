@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "autonomous-explorer"
 version = "0.1.0"
-description = "Reproducible rover tracking, navigation, localization and landmark SLAM"
+description = "Reproducible rover navigation, SLAM, decision-making and viewpoint exploration"
 requires-python = ">=3.10"
 dependencies = ["numpy>=1.24,<3", "matplotlib>=3.7,<4", "pillow>=10,<13"]
 

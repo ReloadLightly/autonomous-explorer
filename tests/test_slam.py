@@ -287,6 +287,6 @@ def test_curated_slam_provenance_and_summary():
     assert provenance["input_files_sha256"] == manifest["files_sha256"]
     for name, digest in provenance["outputs_sha256"].items():
         assert sha256(media / name) == digest
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "MILESTONE_04.md").read_text()
     table = readme.split("<!-- slam-summary:start -->\n")[1].split("<!-- slam-summary:end -->")[0]
     assert table == (root / "summary.md").read_text()

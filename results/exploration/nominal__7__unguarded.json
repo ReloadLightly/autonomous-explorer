@@ -1,0 +1,268 @@
+{
+  "seed": 7,
+  "scenario": {
+    "name": "nominal",
+    "yaw_bias_radps": 0.0,
+    "landmark_outage_s": null
+  },
+  "mode": "unguarded",
+  "status": {
+    "mission_status": "complete",
+    "last_state": "complete",
+    "observed_horizon_s": 68.3,
+    "completed_intervals": 1366,
+    "planned_intervals": 3200,
+    "goals_completed": 3,
+    "plans": 4
+  },
+  "events": [
+    {
+      "time_s": 0.0,
+      "type": "plan",
+      "goal_id": 4,
+      "mode": "exploring",
+      "path": [
+        [
+          1.54,
+          0.97
+        ],
+        [
+          7.5,
+          2.5
+        ],
+        [
+          10.5,
+          4.0
+        ]
+      ]
+    },
+    {
+      "time_s": 21.35,
+      "type": "viewpoint_reached",
+      "goal_id": 4
+    },
+    {
+      "time_s": 21.400000000000002,
+      "type": "plan",
+      "goal_id": 2,
+      "mode": "exploring",
+      "path": [
+        [
+          10.405618962892534,
+          3.943704277048774
+        ],
+        [
+          10.0,
+          8.0
+        ],
+        [
+          6.0,
+          8.5
+        ]
+      ]
+    },
+    {
+      "time_s": 41.050000000000004,
+      "type": "viewpoint_reached",
+      "goal_id": 2
+    },
+    {
+      "time_s": 41.1,
+      "type": "plan",
+      "goal_id": 1,
+      "mode": "exploring",
+      "path": [
+        [
+          6.135473914353029,
+          8.484116442508338
+        ],
+        [
+          1.5,
+          8.5
+        ]
+      ]
+    },
+    {
+      "time_s": 51.400000000000006,
+      "type": "viewpoint_reached",
+      "goal_id": 1
+    },
+    {
+      "time_s": 51.45,
+      "from": "exploring",
+      "to": "returning",
+      "reason": "exploration_budget_or_coverage"
+    },
+    {
+      "time_s": 51.45,
+      "type": "plan",
+      "goal_id": -1,
+      "mode": "returning",
+      "path": [
+        [
+          1.5878167211457288,
+          8.525778387441834
+        ],
+        [
+          1.5,
+          1.0
+        ]
+      ]
+    },
+    {
+      "time_s": 68.3,
+      "from": "returning",
+      "to": "complete",
+      "reason": "home_reached_at_low_speed"
+    }
+  ],
+  "decisions": [
+    {
+      "time_s": 0.0,
+      "selected": 4,
+      "coverage_fraction": 0.17272727272727273,
+      "candidates": [
+        {
+          "id": 0,
+          "gain_cells": 18,
+          "map_uncertainty": 0.019873900824178066,
+          "path_length_m": 4.030198506277328,
+          "utility": 15.18879799601796
+        },
+        {
+          "id": 1,
+          "gain_cells": 22,
+          "map_uncertainty": 0.0,
+          "path_length_m": 7.530106240950389,
+          "utility": 16.72892563133473
+        },
+        {
+          "id": 2,
+          "gain_cells": 25,
+          "map_uncertainty": 0.0,
+          "path_length_m": 9.256020088109631,
+          "utility": 18.520785938323257
+        },
+        {
+          "id": 3,
+          "gain_cells": 21,
+          "map_uncertainty": 0.0,
+          "path_length_m": 13.527020021073511,
+          "utility": 11.531085985248543
+        },
+        {
+          "id": 4,
+          "gain_cells": 27,
+          "map_uncertainty": 0.0,
+          "path_length_m": 9.507353139410098,
+          "utility": 20.34485280241293
+        },
+        {
+          "id": 5,
+          "gain_cells": 20,
+          "map_uncertainty": 0.0,
+          "path_length_m": 8.96005022307353,
+          "utility": 13.727964843848529
+        },
+        {
+          "id": 6,
+          "gain_cells": 14,
+          "map_uncertainty": 0.0441269942304049,
+          "path_length_m": 4.460100895719737,
+          "utility": 10.899992870111387
+        }
+      ]
+    },
+    {
+      "time_s": 21.400000000000002,
+      "selected": 2,
+      "coverage_fraction": 0.5545454545454546,
+      "candidates": [
+        {
+          "id": 0,
+          "gain_cells": 15,
+          "map_uncertainty": 0.01670914847861481,
+          "path_length_m": 11.169438378465967,
+          "utility": 7.189747709313131
+        },
+        {
+          "id": 1,
+          "gain_cells": 22,
+          "map_uncertainty": 0.0,
+          "path_length_m": 11.791189473176484,
+          "utility": 13.746167368776462
+        },
+        {
+          "id": 2,
+          "gain_cells": 24,
+          "map_uncertainty": 0.0,
+          "path_length_m": 8.107654568302376,
+          "utility": 18.32464180218834
+        },
+        {
+          "id": 3,
+          "gain_cells": 15,
+          "map_uncertainty": 0.19347889805636223,
+          "path_length_m": 4.55727314247776,
+          "utility": 11.906648249293749
+        },
+        {
+          "id": 5,
+          "gain_cells": 1,
+          "map_uncertainty": 0.19347889805636223,
+          "path_length_m": 2.9452169106673156,
+          "utility": -0.9649123884389397
+        },
+        {
+          "id": 6,
+          "gain_cells": 0,
+          "map_uncertainty": 0.03733000089882552,
+          "path_length_m": 5.2985727622552785,
+          "utility": -3.690335933129282
+        }
+      ]
+    },
+    {
+      "time_s": 41.1,
+      "selected": 1,
+      "coverage_fraction": 0.8363636363636363,
+      "candidates": [
+        {
+          "id": 0,
+          "gain_cells": 12,
+          "map_uncertainty": 0.016479792512242467,
+          "path_length_m": 5.7988521101683865,
+          "utility": 7.949043419138251
+        },
+        {
+          "id": 1,
+          "gain_cells": 15,
+          "map_uncertainty": 0.2255727474463159,
+          "path_length_m": 4.635501126959844,
+          "utility": 11.867935584851267
+        },
+        {
+          "id": 3,
+          "gain_cells": 0,
+          "map_uncertainty": 0.4718761434394265,
+          "path_length_m": 4.364554987589395,
+          "utility": -2.8192504195928634
+        },
+        {
+          "id": 5,
+          "gain_cells": 1,
+          "map_uncertainty": 0.17778006564963356,
+          "path_length_m": 9.498908705129583,
+          "utility": -5.560346060765891
+        },
+        {
+          "id": 6,
+          "gain_cells": 0,
+          "map_uncertainty": 0.03581838394490998,
+          "path_length_m": 7.700729715662814,
+          "utility": -5.3726016089915145
+        }
+      ]
+    }
+  ]
+}

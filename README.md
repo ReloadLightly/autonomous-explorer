@@ -2,24 +2,25 @@
 
 A wheeled-rover learning project accompanying *Principles of Robot Autonomy*. We are building toward navigation, localization, mapping, exploration, and a return home—one reproducible milestone at a time.
 
-![The rover builds a landmark map using first sightings and joint EKF SLAM](media/slam/slam_hero.gif)
+![An unsupervised mission continues through a sensor outage while a supervised mission waits and recovers](media/exploration/exploration_hero.gif)
 
-**Milestone 04 · Landmark Mapping and SLAM.** The estimator starts with a rover prior and an empty landmark map. Range/bearing observations initialize features; later sightings update a joint belief over rover state and landmark positions. SLAM's pose estimate drives the existing tracking controller. Landmark coordinates are available only to the synthetic sensor, evaluation, and the explicitly labelled supplied-map baseline.
+**Milestone 05 · Decision-Making and Viewpoint Exploration.** The rover now selects observation goals online, plans checked routes from its estimated position, builds its landmark map with SLAM, and decides when to return home. A localization-health supervisor brakes, waits for fresh observations, and replans after recovery. Persistent observation loss produces an explicit abort.
 
-In the normal-sensing experiment, SLAM discovers all six landmarks and stays clear for all three seeds. Mean pose RMS is **0.149 m**, and final map RMS in the initial-prior frame averages **0.129 m**. A matched replay with revisits denied has **0.220 m** pose RMS. Outage experiments retain a collision and a low-speed exit; map recovery does not establish safe execution.
+Across three seeds, supervised nominal and temporary-outage missions complete with positive clearance audits and meet the actual home-arrival tolerances. Persistent-outage missions stop exploring and abort. The unsupervised baseline exposes a failure: it reports completion during persistent observation loss while actually ending **2.1–4.0 m from home**, with envelope violations. Mission status, actual arrival, and actual clearance are audited separately.
 
 ## Project status
 
 | Milestone | Status | Evidence |
 | :-- | :-- | :-- |
-| 01 · Trajectory tracking foundations | Complete | [Walkthrough and gallery](MILESTONE_01.md) |
+| 01 · Trajectory tracking | Complete | [Walkthrough and gallery](MILESTONE_01.md) |
 | 02 · Obstacle-aware navigation | Complete | [Walkthrough and gallery](MILESTONE_02.md) |
 | 03 · Sensing and localization | Complete | [Walkthrough and gallery](MILESTONE_03.md) |
-| 04 · Landmark mapping and SLAM | Complete | [Protocol](docs/slam.md), [saved evidence](results/slam/), [verification](docs/slam-verification.md) |
-| 05 · Decision-making and exploration | Next | Choose goals from new evidence, handle localization health, and replan |
-| Later · Return home and goal regulation | Planned | Return behavior and an explicit stop/park transition |
+| 04 · Landmark mapping and SLAM | Complete | [Walkthrough and gallery](MILESTONE_04.md) |
+| 05 · Decision-making and viewpoint exploration | Complete | [Protocol](docs/exploration.md), [18 missions](results/exploration/), [verification](docs/exploration-verification.md) |
+| 06 · Unknown-space occupancy mapping and exploration | Next | Sense obstacle geometry, build free/occupied/unknown space, and select goals from that evolving map |
+| Later · Precise goal regulation | Planned | Stationary parking with final-pose regulation and stronger stopping guarantees |
 
-SLAM builds an initially unknown **point-landmark map**. The obstacle rectangles used for routing are supplied. The route is a prescribed loop; this milestone does not choose exploration goals or infer obstacle occupancy.
+Exploration here means choosing among supplied **candidate observation viewpoints** using estimated coverage and map uncertainty. The obstacle map remains supplied. Point-landmark positions remain initially unknown to SLAM. There is no obstacle occupancy learning or frontier discovery in this milestone.
 
 ## Reproduce it
 
@@ -27,101 +28,100 @@ Use [uv](https://docs.astral.sh/uv/) and the committed lockfile:
 
 ```bash
 uv sync --frozen --extra dev
-uv run --frozen explorer slam-reproduce --results build/slam-reproduced/results --media build/slam-reproduced/media
+uv run --frozen explorer explore-reproduce --results build/exploration-reproduced/results --media build/exploration-reproduced/media
 ```
 
-The command plans and certifies a loop, runs **18 closed-loop executions** (three seeds × two conditions × three estimators), saves **six matched estimator replays**, and renders six figures and one GIF. Results directories must be empty or new.
+This runs three seeds × three observation conditions × two supervisor modes, then renders six figures and one GIF. Numerical result directories must be empty or new.
 
 ```bash
-uv run --frozen explorer slam-verify --results results/slam
+uv run --frozen explorer explore-verify --results results/exploration
 uv run --frozen pytest -q
 uv run --frozen ruff check src tests
 uv run --frozen ruff format --check src tests
 ```
 
-`slam-verify` checks hashes, recalculates metrics and clearance, regenerates tables, and replays every estimator from saved observations and applied commands. Re-render the evidence without rerunning the planner, sensors, or physical simulation:
+Verification reconstructs SLAM, goal utilities, plans, supervisor transitions, and requested controls from saved observations and applied commands. It separately recalculates metrics and physical clearance from actual saved states. Rendering uses the same saved evidence:
 
 ```bash
-uv run --frozen explorer slam-render --results results/slam --media build/slam-rendered
+uv run --frozen explorer explore-render --results results/exploration --media build/exploration-rendered
 ```
 
-`slam-simulate` saves numerical evidence without rendering. [configs/slam.json](configs/slam.json) controls route, geometry, noise, initial prior, seeds, outages, and playback. The curated gallery expects the `nominal` and `landmark_outage` cases. Runtime dependencies remain NumPy, Matplotlib, and Pillow; a virtual-environment install with `python -m pip install -e '.[dev]'` also works.
+`explore-simulate` saves numerical evidence without the gallery. [configs/exploration.json](configs/exploration.json) controls candidates, utility weights, motion limits, health thresholds, outages, and seeds. Its SLAM configuration resolves relative to that file; the complete configuration is embedded in the evidence. The curated gallery expects `nominal`, `temporary_outage`, and `persistent_outage` cases. Runtime dependencies remain NumPy, Matplotlib, and Pillow.
 
-Earlier experiments retain their original commands and evidence:
+Earlier commands and evidence remain available:
 
 ```bash
 uv run --frozen explorer verify --results results/milestone
 uv run --frozen explorer plan-verify --results results/navigation
 uv run --frozen explorer localize-verify --results results/localization
+uv run --frozen explorer slam-verify --results results/slam
 ```
 
 ## What changed
 
-- **Unknown map:** EKF SLAM dynamically augments `(x, y, v, theta)` with a two-coordinate state for each newly observed feature. Landmark identities are supplied, but their positions are withheld.
-- **Correlated uncertainty:** initialization includes pose-to-map and map-to-map covariance. The first reading initializes a feature once; it is not reused as an independent correction. Later observations can change the rover and correlated map together.
-- **Revisits:** identified features returning after a five-second observation gap provide long-range corrections. A matched estimator replay denies those revisits while using the same recorded commands and observations.
-- **Evaluation:** supplied-map EKF, first-sighting-only mapping, and joint SLAM all drive feedback from estimates. Only the supplied-map baseline receives surveyed landmark coordinates. No controller receives exact state.
-
-The experiment uses a 66 s loop around two supplied freestanding rectangles, a 0.05 s control period, 10 Hz speed measurements, and 5 Hz range/bearing measurements with 4 m range and obstacle occlusion. It reuses the model, controller, continuous geometry tests, A*, reference certification, and sensor equations from the earlier milestones.
+- **Goal selection:** a deterministic utility combines unseen modelled observation cells, estimated landmark uncertainty, and checked route length. Every candidate score and selected goal is recorded. This is a greedy heuristic without a global optimality claim.
+- **Online planning:** the planner connects the continuous pose estimate to a lattice through a checked segment, uses A* where needed, and validates all shortcut segments. Goals are replanned after recovery or a large pose correction.
+- **Mission supervision:** `exploring → returning → complete`, with `braking → waiting → resume/abort` when landmark information is stale or position uncertainty grows. Fresh observations and recovery hysteresis govern resumption; the policy cannot read the outage schedule.
+- **Zero-speed control:** a heading/speed waypoint controller permits braking, waiting, and turning at rest. The earlier flatness controller and all of its evidence remain intact. Low-speed arrival is distinct from precise parked-pose regulation.
 
 ## Measured outcomes
 
-Entries average per-run RMS over seeds 7, 19, and 41. Map RMS is the final error of discovered landmark coordinates in the initial-prior frame; it is not aligned to truth afterward. “Clear” requires a completed execution and a positive numerical interval clearance bound.
+“Reports complete” is the mission's decision from estimated state. “Home audit” additionally requires actual final distance ≤0.30 m and actual absolute speed ≤0.05 m/s. “Clear audit” requires positive numerical interval clearance over the entire recorded history and can also hold for an aborted mission. Coverage is a modelled visibility footprint from estimated sensor poses, not measured unknown-space occupancy.
 
-<!-- slam-summary:start -->
-| Case | Estimator | Mean pose RMS [m] | Mean map RMS [m] | Mean tracking RMS [m] | Clear runs |
-| :-- | :-- | --: | --: | --: | --: |
-| nominal | known map | 0.0236 | supplied | 0.0254 | 3/3 |
-| nominal | first sighting | 0.3116 | 0.3028 | 0.3119 | 3/3 |
-| nominal | slam | 0.1489 | 0.1289 | 0.1512 | 3/3 |
-| landmark outage | known map | 0.2134 | supplied | 0.2691 | 2/3 |
-| landmark outage | first sighting | 1.7955 | 1.4833 | 1.7956 | 0/3 |
-| landmark outage | slam | 0.5644 | 0.3167 | 0.6221 | 1/3 |
-<!-- slam-summary:end -->
+<!-- exploration-summary:start -->
+| Case | Supervisor | Reports complete | Home audit | Aborted | Clear audit | Mean model coverage |
+| :-- | :-- | --: | --: | --: | --: | --: |
+| nominal | unguarded | 3/3 | 3/3 | 0/3 | 3/3 | 99.1% |
+| nominal | guarded | 3/3 | 3/3 | 0/3 | 3/3 | 99.1% |
+| temporary outage | unguarded | 0/3 | 0/3 | 3/3 | 2/3 | 77.3% |
+| temporary outage | guarded | 3/3 | 3/3 | 0/3 | 3/3 | 99.1% |
+| persistent outage | unguarded | 3/3 | 0/3 | 0/3 | 0/3 | 44.5% |
+| persistent outage | guarded | 0/3 | 0/3 | 3/3 | 3/3 | 44.5% |
+<!-- exploration-summary:end -->
 
-The [generated summary](results/slam/summary.md), [per-run outcomes](results/slam/outcomes.md), and [metrics](results/slam/metrics.json) retain all cases. An early-exit run contributes RMS over its recorded prefix and its last available map, not a fabricated completed horizon. In the outage case, SLAM seed 19 has 23 envelope-overlap samples; seed 41 exits the positive-speed domain. Both remain in the results. The supplied-map estimator also collides for seed 19 during the outage.
+The table is generated from [summary.md](results/exploration/summary.md); [metrics.json](results/exploration/metrics.json) retains each run. The temporary outage suppresses landmarks on **[14,22) s**. The persistent outage suppresses them from **14 s** onward. Both disturbed conditions add +0.12 rad/s yaw bias on **[14,18) s**, and all conditions have shared pre-generated plant and sensor noise.
 
-The six **estimator-only** replays are separate from those closed-loop comparisons. On the recorded nominal SLAM trajectories, denying revisits raises mean pose RMS from **0.149 m to 0.220 m** and final map pair-distance RMS from **0.030 m to 0.127 m**. [Replay metrics](results/slam/replay_metrics.json) preserve each seed. Absolute map RMS does not improve for every seed: the initial pose prior anchors the frame, and relative landmark observations do not supply independent absolute position or heading.
+Supervised nominal and temporary-outage completions end **0.114–0.167 m from actual home**, at actual absolute stored speeds **0.024–0.042 m/s**. Persistent-loss aborts occur at **29.85 s**, with actual absolute stored speeds below **0.004 m/s**. These are observed outcomes of three seeds, not a formal stopping or collision-avoidance guarantee. The model's translational disturbance can still move a rover whose stored speed is zero.
 
 ## Visual gallery
 
-All empirical figures and replay frames use saved evidence. Crosses show evaluation truth; they are not observations supplied to SLAM. Shaded obstacle geometry is supplied for routing.
+All empirical figures and replay frames use saved data. Amber is the baseline without health supervision; cyan is the supervised mission. The supplied obstacle map and candidate viewpoints remain explicit.
 
-![Final landmark maps from first sightings and joint SLAM](media/slam/01_mapping.png)
+![Actual and estimated online mission paths during a temporary outage](media/exploration/01_online_missions.png)
 
-**01 · Joint mapping.** Both filters begin without landmark coordinates. Reobservations constrain the joint map and motion belief. Ellipses show approximate 95% map marginals. [SVG](media/slam/01_mapping.svg).
+**01 · Online missions.** Tinted cells show estimated model coverage. Goal selection, recovery, and return produce a mission trajectory rather than following a fixed loop. [SVG](media/exploration/01_online_missions.svg).
 
-![Four stages of landmark discovery and map correction](media/slam/02_map_growth.png)
+![Supervisor timelines show braking, waiting, recovery, returning, completion and abort](media/exploration/02_supervisor_states.png)
 
-**02 · Map growth.** Landmark means appear after their first sensor observation. Equal-scale snapshots retain discovery order and the actual trail.
+**02 · State histories.** Temporary loss leads to recovery; persistent loss leads to abort. Short logs end at their actual terminal decision.
 
-![Pose estimation and actual tracking errors with normal sensing and an outage](media/slam/03_errors.png)
+![Recorded viewpoint utilities before and after new observation coverage](media/exploration/03_goal_utilities.png)
 
-**03 · Two errors.** Localization compares estimate with truth; tracking compares actual motion with the reference. Different closed-loop estimators produce different trajectories and visibility.
+**03 · Goal utilities.** Selected goals follow the recorded candidate scores as model coverage and the landmark belief evolve. [SVG](media/exploration/03_goal_utilities.svg).
 
-![Matched estimator replays with accepted and denied revisits](media/slam/04_revisits.png)
+![Truth-based interval clearance through all three mission conditions](media/exploration/04_clearance.png)
 
-**04 · Revisit ablation.** These replays use identical recorded motion and observations. They isolate estimator behavior without claiming a counterfactual rover trajectory. [SVG](media/slam/04_revisits.svg).
+**04 · Clearance audit.** Unsafe baseline histories remain visible. A completed mission does not establish clear motion. [SVG](media/exploration/04_clearance.svg).
 
-![Correlations between rover and landmarks, with rover position covariance over time](media/slam/05_joint_uncertainty.png)
+![Landmark observation age and actual speed show the health intervention](media/exploration/05_localization_health.png)
 
-**05 · Correlated belief.** The dense joint covariance retains relations between rover and map variables. A finite initial rover prior anchors the coordinate frame; covariance is a model belief, not a clearance certificate.
+**05 · Health intervention.** The supervisor uses accepted-observation age and covariance. Actual speed is shown afterward for evaluation.
 
-![Actual outage trajectories and clearance audits retain collisions](media/slam/06_outage_clearance.png)
+![Per-seed model coverage and actual home error distinguish reported completion from arrival](media/exploration/06_completion_audit.png)
 
-**06 · Retained failures.** Landmark corrections cannot undo earlier envelope overlaps. The full study also includes a partial run that exits the controller's speed domain. [SVG](media/slam/06_outage_clearance.svg).
+**06 · Completion audit.** A belief-based return can end metres from home. Aborted runs do not claim arrival; they remain included.
 
 ## Learn and inspect
 
-Read the [SLAM experiment and equations](docs/slam.md), [primary-source notes](docs/slam-sources.md), and [verification record](docs/slam-verification.md). The book anchor is [Chapter 14 · Simultaneous Localization and Mapping](https://porabook.com/book/slam/).
+Read the [mission protocol and transition rules](docs/exploration.md), [source notes](docs/exploration-sources.md), and [verification record](docs/exploration-verification.md). The book anchor is [Chapter 16 · Finite State Machines](https://porabook.com/book/finite-state-machines/).
 
 | Location | Responsibility |
 | :-- | :-- |
-| [slam.py](src/autonomous_explorer/slam.py) | Inverse observations, dynamic state augmentation, full covariance, and joint updates |
-| [slam_evidence.py](src/autonomous_explorer/slam_evidence.py) | Planned loop, closed-loop comparisons, estimator replays, metrics, and evidence audits |
-| [slam_render.py](src/autonomous_explorer/slam_render.py) | Saved-data mapping figures and animation |
-| [tests/test_slam.py](tests/test_slam.py) | Independent Jacobians, correlations, causal replay, branch cuts, failures, and provenance |
+| [mission.py](src/autonomous_explorer/mission.py) | Belief-only utilities, checked plans, waypoint commands, supervisor and return logic |
+| [exploration_evidence.py](src/autonomous_explorer/exploration_evidence.py) | Synthetic sensor/SLAM integration, mission replay, actual-state audits and checksums |
+| [exploration_render.py](src/autonomous_explorer/exploration_render.py) | Saved-data mission gallery and animation |
+| [tests/test_exploration.py](tests/test_exploration.py) | Goal changes, route checks, state transitions, zero speed, truth-free replay and honest completion |
 
-Current assumptions include known feature identities, static point landmarks, a supplied obstacle map, synchronous sensors, a local initial-pose prior, and kinematic actuation. This is an online EKF over current rover state and landmarks; it does not optimize historical poses. Feature extraction, ambiguous data association, occupancy mapping, exploration goals, runtime collision avoidance, and hardware remain future work. The endpoint is still moving, with no parking transition.
+Assumptions remain a supplied static obstacle map, known feature IDs, synchronous synthetic sensors, a local initial-pose prior, and kinematic actuation. Estimated coverage is a proxy. The health rules are heuristics, and the clearance audit remains conditioned on numerical integration endpoints without a formal global RK4 error enclosure. There is no hardware validation or exact stationary parking claim.
 
-The next milestone is **decision-making and exploration**, with localization-health handling motivated by the retained outage failures. The [optional CI template](docs/checks-workflow.yml) covers all four milestones. Original code and figures use the [MIT license](LICENSE); study sources are attributed separately.
+The next milestone is **unknown-space occupancy mapping and exploration**. The [optional CI template](docs/checks-workflow.yml) includes all five milestones. Original code and figures use the [MIT license](LICENSE); study sources are attributed separately.

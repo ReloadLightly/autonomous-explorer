@@ -1,0 +1,323 @@
+{
+  "seed": 41,
+  "scenario": {
+    "name": "temporary_outage",
+    "yaw_bias_radps": 0.12,
+    "landmark_outage_s": [
+      14.0,
+      22.0
+    ]
+  },
+  "mode": "unguarded",
+  "status": {
+    "mission_status": "no_reachable_goal",
+    "last_state": "aborted",
+    "observed_horizon_s": 48.25,
+    "completed_intervals": 965,
+    "planned_intervals": 3200,
+    "goals_completed": 3,
+    "plans": 5
+  },
+  "events": [
+    {
+      "time_s": 0.0,
+      "type": "plan",
+      "goal_id": 4,
+      "mode": "exploring",
+      "path": [
+        [
+          1.54,
+          0.97
+        ],
+        [
+          7.5,
+          2.5
+        ],
+        [
+          10.5,
+          4.0
+        ]
+      ]
+    },
+    {
+      "time_s": 20.900000000000002,
+      "type": "viewpoint_reached",
+      "goal_id": 4
+    },
+    {
+      "time_s": 20.950000000000003,
+      "type": "plan",
+      "goal_id": 2,
+      "mode": "exploring",
+      "path": [
+        [
+          10.411227282615076,
+          3.9564701938619073
+        ],
+        [
+          10.0,
+          8.0
+        ],
+        [
+          6.0,
+          8.5
+        ]
+      ]
+    },
+    {
+      "time_s": 22.0,
+      "from": "exploring",
+      "to": "braking",
+      "reason": "pose_correction"
+    },
+    {
+      "time_s": 22.150000000000002,
+      "from": "braking",
+      "to": "waiting",
+      "reason": "estimated_speed_low"
+    },
+    {
+      "time_s": 22.6,
+      "from": "waiting",
+      "to": "exploring",
+      "reason": "localization_recovered"
+    },
+    {
+      "time_s": 22.650000000000002,
+      "type": "plan",
+      "goal_id": 2,
+      "mode": "exploring",
+      "path": [
+        [
+          8.367430591913209,
+          7.829354688548444
+        ],
+        [
+          6.0,
+          8.5
+        ]
+      ]
+    },
+    {
+      "time_s": 27.900000000000002,
+      "type": "viewpoint_reached",
+      "goal_id": 2
+    },
+    {
+      "time_s": 27.950000000000003,
+      "type": "plan",
+      "goal_id": 1,
+      "mode": "exploring",
+      "path": [
+        [
+          6.102713623195522,
+          8.47935320465977
+        ],
+        [
+          1.5,
+          8.5
+        ]
+      ]
+    },
+    {
+      "time_s": 37.95,
+      "type": "viewpoint_reached",
+      "goal_id": 1
+    },
+    {
+      "time_s": 38.0,
+      "from": "exploring",
+      "to": "returning",
+      "reason": "exploration_budget_or_coverage"
+    },
+    {
+      "time_s": 38.0,
+      "type": "plan",
+      "goal_id": -1,
+      "mode": "returning",
+      "path": [
+        [
+          1.6104975166794806,
+          8.497200869644663
+        ],
+        [
+          1.5,
+          1.0
+        ]
+      ]
+    },
+    {
+      "time_s": 46.6,
+      "from": "returning",
+      "to": "braking",
+      "reason": "pose_correction"
+    },
+    {
+      "time_s": 47.650000000000006,
+      "from": "braking",
+      "to": "waiting",
+      "reason": "estimated_speed_low"
+    },
+    {
+      "time_s": 48.2,
+      "from": "waiting",
+      "to": "returning",
+      "reason": "localization_recovered"
+    },
+    {
+      "time_s": 48.25,
+      "from": "returning",
+      "to": "aborted",
+      "reason": "no_reachable_goal"
+    }
+  ],
+  "decisions": [
+    {
+      "time_s": 0.0,
+      "selected": 4,
+      "coverage_fraction": 0.17272727272727273,
+      "candidates": [
+        {
+          "id": 0,
+          "gain_cells": 18,
+          "map_uncertainty": 0.019256825718854932,
+          "path_length_m": 4.030198506277328,
+          "utility": 15.188489458465298
+        },
+        {
+          "id": 1,
+          "gain_cells": 22,
+          "map_uncertainty": 0.0,
+          "path_length_m": 7.530106240950389,
+          "utility": 16.72892563133473
+        },
+        {
+          "id": 2,
+          "gain_cells": 25,
+          "map_uncertainty": 0.0,
+          "path_length_m": 9.256020088109631,
+          "utility": 18.520785938323257
+        },
+        {
+          "id": 3,
+          "gain_cells": 21,
+          "map_uncertainty": 0.0,
+          "path_length_m": 13.527020021073511,
+          "utility": 11.531085985248543
+        },
+        {
+          "id": 4,
+          "gain_cells": 27,
+          "map_uncertainty": 0.0,
+          "path_length_m": 9.507353139410098,
+          "utility": 20.34485280241293
+        },
+        {
+          "id": 5,
+          "gain_cells": 20,
+          "map_uncertainty": 0.0,
+          "path_length_m": 8.96005022307353,
+          "utility": 13.727964843848529
+        },
+        {
+          "id": 6,
+          "gain_cells": 14,
+          "map_uncertainty": 0.0453713037548633,
+          "path_length_m": 4.460100895719737,
+          "utility": 10.900615024873616
+        }
+      ]
+    },
+    {
+      "time_s": 20.950000000000003,
+      "selected": 2,
+      "coverage_fraction": 0.44545454545454544,
+      "candidates": [
+        {
+          "id": 0,
+          "gain_cells": 15,
+          "map_uncertainty": 0.016517665068009738,
+          "path_length_m": 11.179731641054584,
+          "utility": 7.182446683795796
+        },
+        {
+          "id": 1,
+          "gain_cells": 22,
+          "map_uncertainty": 0.0,
+          "path_length_m": 11.796634313636496,
+          "utility": 13.742355980454454
+        },
+        {
+          "id": 2,
+          "gain_cells": 24,
+          "map_uncertainty": 0.0,
+          "path_length_m": 8.095515810834085,
+          "utility": 18.33313893241614
+        },
+        {
+          "id": 3,
+          "gain_cells": 21,
+          "map_uncertainty": 0.0,
+          "path_length_m": 4.544396956100684,
+          "utility": 17.818922130729522
+        },
+        {
+          "id": 5,
+          "gain_cells": 6,
+          "map_uncertainty": 0.19330042209275516,
+          "path_length_m": 2.9578026645714157,
+          "utility": 4.026188345846386
+        },
+        {
+          "id": 6,
+          "gain_cells": 0,
+          "map_uncertainty": 0.038644595216785316,
+          "path_length_m": 5.310333524938096,
+          "utility": -3.6979111698482736
+        }
+      ]
+    },
+    {
+      "time_s": 27.950000000000003,
+      "selected": 1,
+      "coverage_fraction": 0.7909090909090909,
+      "candidates": [
+        {
+          "id": 0,
+          "gain_cells": 14,
+          "map_uncertainty": 0.015351620469931871,
+          "path_length_m": 5.76982421048734,
+          "utility": 9.968798862893827
+        },
+        {
+          "id": 1,
+          "gain_cells": 19,
+          "map_uncertainty": 0.0,
+          "path_length_m": 4.602759931531024,
+          "utility": 15.778068047928283
+        },
+        {
+          "id": 3,
+          "gain_cells": 0,
+          "map_uncertainty": 0.10779057973584164,
+          "path_length_m": 4.397334848494946,
+          "utility": -3.024239104078541
+        },
+        {
+          "id": 5,
+          "gain_cells": 2,
+          "map_uncertainty": 0.0,
+          "path_length_m": 9.496936912754078,
+          "utility": -4.647855838927854
+        },
+        {
+          "id": 6,
+          "gain_cells": 0,
+          "map_uncertainty": 0.030113869938552237,
+          "path_length_m": 7.697758225836683,
+          "utility": -5.373373823116402
+        }
+      ]
+    }
+  ]
+}

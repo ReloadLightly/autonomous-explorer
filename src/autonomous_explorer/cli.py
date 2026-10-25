@@ -1,4 +1,4 @@
-"""Reproduce, simulate, render, or verify tracking, navigation, localization, and SLAM."""
+"""Reproduce, simulate, render, or verify the rover autonomy milestones."""
 
 import argparse
 import json
@@ -12,12 +12,33 @@ def main():
     parser.add_argument(
         "command",
         choices=commands
-        + [prefix + name for prefix in ["plan-", "localize-", "slam-"] for name in commands],
+        + [
+            prefix + name
+            for prefix in ["plan-", "localize-", "slam-", "explore-"]
+            for name in commands
+        ],
     )
     parser.add_argument("--config")
     parser.add_argument("--results")
     parser.add_argument("--media")
     args = parser.parse_args()
+    if args.command.startswith("explore-"):
+        from .exploration_evidence import run_exploration, verify_exploration
+
+        config = args.config or "configs/exploration.json"
+        results = args.results or "results/exploration"
+        media = args.media or "media/exploration"
+        command = args.command.removeprefix("explore-")
+        if command in {"simulate", "reproduce"}:
+            print(json.dumps(run_exploration(config, results), indent=2))
+        if command in {"render", "reproduce"}:
+            from .exploration_render import render_exploration
+
+            render_exploration(results, media)
+        if command == "verify":
+            manifest = verify_exploration(results)
+            print(f"Verified exploration: {len(manifest['runs'])} mission/SLAM/control replays.")
+        return
     if args.command.startswith("slam-"):
         from .slam_evidence import run_slam, verify_slam
 
