@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="720pt" height="432pt" viewBox="0 0 720 432" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-25T05:47:53.269668</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.11.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 432 
+L 720 432 
+L 720 0 
+L 0 0 
+z
+" style="fill: #081222"/>
+  </g>
+  <g id="axes_1">
+   <g id="line2d_1">
+    <path d="M 357.852203 345.52678 
+L 357.852203 244.482712 
+" clip-path="url(#pe82b9657b0)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8aa9c9; stroke-width: 2"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 226.494915 244.482712 
+L 357.852203 244.482712 
+" clip-path="url(#pe82b9657b0)" style="fill: none; stroke-dasharray: 2,3.3; stroke-dashoffset: 0; stroke: #8aa9c9; stroke-width: 2"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 413.426441 244.482712 
+L 413.416446 243.428781 
+L 413.386466 242.375229 
+L 413.336512 241.322435 
+L 413.266601 240.270778 
+L 413.176759 239.220636 
+L 413.067017 238.172386 
+L 412.937416 237.126406 
+L 412.788001 236.083072 
+L 412.618828 235.04276 
+L 412.429956 234.005842 
+L 412.221453 232.972693 
+L 411.993395 231.943684 
+L 411.745863 230.919185 
+L 411.478947 229.899564 
+L 411.192743 228.885189 
+L 410.887352 227.876424 
+L 410.562887 226.873631 
+L 410.219462 225.877173 
+L 409.857202 224.887406 
+L 409.476236 223.904688 
+L 409.076703 222.929371 
+L 408.658745 221.961806 
+L 408.222513 221.002341 
+L 407.768163 220.051322 
+L 407.29586 219.109091 
+L 406.805773 218.175986 
+L 406.298079 217.252343 
+L 405.772959 216.338494 
+L 405.230603 215.434768 
+" clip-path="url(#pe82b9657b0)" style="fill: none; stroke: #e6ac62; stroke-width: 2; stroke-linecap: square"/>
+   </g>
+   <g id="patch_2">
+    <path d="M 228.491405 345.52678 
+Q 342.693622 345.52678 455.777804 345.52678 
+" style="fill: none; stroke: #d9e9ff; stroke-linecap: round"/>
+    <path d="M 451.377804 343.32678 
+L 455.777804 345.52678 
+L 451.377804 347.72678 
+" style="fill: none; stroke: #d9e9ff; stroke-linecap: round"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 226.494915 343.529056 
+Q 226.494915 239.430726 226.494915 136.450431 
+" style="fill: none; stroke: #d9e9ff; stroke-linecap: round"/>
+    <path d="M 224.294915 140.850431 
+L 226.494915 136.450431 
+L 228.694915 140.850431 
+" style="fill: none; stroke: #d9e9ff; stroke-linecap: round"/>
+   </g>
+   <g id="text_1">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #d9e9ff" x="458.896271" y="358.662508" transform="rotate(-0 458.896271 358.662508)">World x</text>
+   </g>
+   <g id="text_2">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d9e9ff" x="230.536678" y="135.355119" transform="rotate(-0 230.536678 135.355119)">World y</text>
+   </g>
+   <g id="text_3">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #d9e9ff" x="357.852203" y="358.662508" transform="rotate(-0 357.852203 358.662508)">x</text>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d9e9ff" x="216.390508" y="247.340134" transform="rotate(-0 216.390508 247.340134)">y</text>
+   </g>
+   <g id="patch_4">
+    <path d="M 359.558335 243.436674 
+Q 400.924911 218.07461 441.338336 193.296929 
+" style="fill: none; stroke: #37d5ee; stroke-linecap: round"/>
+    <path d="M 436.437316 193.721198 
+L 441.338336 193.296929 
+L 438.73714 197.472306 
+" style="fill: none; stroke: #37d5ee; stroke-linecap: round"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 356.805456 242.775424 
+Q 338.838139 213.469985 321.455204 185.117698 
+" style="fill: none; stroke: #8aa9c9; stroke-linecap: round"/>
+    <path d="M 321.840904 189.573171 
+L 321.455204 185.117698 
+L 325.251002 187.482422 
+" style="fill: none; stroke: #8aa9c9; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #37d5ee" transform="translate(448.301876 175.824538)">v, a</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #37d5ee" transform="translate(448.301876 189.027546)">body x</text>
+   </g>
+   <g id="text_6">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: end; fill: #8aa9c9" x="315.600648" y="175.568675" transform="rotate(-0 315.600648 175.568675)">body y</text>
+   </g>
+   <g id="text_7">
+    <text style="font-size: 16px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #e6ac62" x="420.499525" y="231.346983" transform="rotate(-0 420.499525 231.346983)">θ</text>
+   </g>
+   <g id="text_8">
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #d9e9ff" transform="translate(312.382373 286.768004)">(x, y) • axle centre</text>
+    <text style="font-size: 11px; font-family: 'DejaVu Sans'; fill: #d9e9ff" transform="translate(312.382373 300.056949)">ω = dθ/dt [rad/s]</text>
+   </g>
+   <g id="text_9">
+    <text style="font-size: 13px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d9e9ff" x="246.703729" y="105.041898" transform="rotate(-0 246.703729 105.041898)">state = (x, y, v, θ)     control = (a, ω)</text>
+   </g>
+   <g id="patch_6">
+    <path d="M 345.100159 270.07956 
+L 381.280028 247.897494 
+L 378.526414 231.807245 
+L 365.435695 222.05473 
+L 329.255826 244.236797 
+z
+" clip-path="url(#pe82b9657b0)" style="fill: #0d1c30; stroke: #37d5ee; stroke-width: 1.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 360.259773 269.674373 
+L 379.211133 258.055196 
+L 375.514122 252.025218 
+L 356.562762 263.644395 
+z
+" clip-path="url(#pe82b9657b0)" style="fill: #37d5ee; stroke: #37d5ee; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 340.190285 236.940206 
+L 359.141645 225.321028 
+L 355.444634 219.29105 
+L 336.493274 230.910228 
+z
+" clip-path="url(#pe82b9657b0)" style="fill: #37d5ee; stroke: #37d5ee; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 370.773585 236.560545 
+L 352.696414 239.939735 
+L 359.562291 251.138266 
+z
+" clip-path="url(#pe82b9657b0)" style="fill: #37d5ee; stroke: #37d5ee; stroke-width: 1.3; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 344.069396 255.560169 
+C 344.766123 255.560169 345.434408 255.283356 345.927069 254.790695 
+C 346.419729 254.298035 346.696542 253.62975 346.696542 252.933023 
+C 346.696542 252.236296 346.419729 251.568011 345.927069 251.07535 
+C 345.434408 250.58269 344.766123 250.305877 344.069396 250.305877 
+C 343.372669 250.305877 342.704384 250.58269 342.211724 251.07535 
+C 341.719063 251.568011 341.44225 252.236296 341.44225 252.933023 
+C 341.44225 253.62975 341.719063 254.298035 342.211724 254.790695 
+C 342.704384 255.283356 343.372669 255.560169 344.069396 255.560169 
+L 344.069396 255.560169 
+z
+" clip-path="url(#pe82b9657b0)" style="fill: none; opacity: 0.8; stroke: #37d5ee; stroke-linejoin: miter"/>
+   </g>
+  </g>
+  <g id="text_10">
+   <text style="font-weight: 700; font-size: 19px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #d9e9ff" x="39.6" y="20.917031" transform="rotate(-0 39.6 20.917031)">01  /  A rover in the world</text>
+  </g>
+  <g id="text_11">
+   <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #8aa9c9" x="39.6" y="32.4" transform="rotate(-0 39.6 32.4)">Conceptual state diagram • same oriented body used throughout the gallery</text>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pe82b9657b0">
+   <rect x="196.181695" y="77.76" width="313.23661" height="298.08"/>
+  </clipPath>
+ </defs>
+</svg>

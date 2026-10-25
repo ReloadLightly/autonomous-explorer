@@ -1,0 +1,77 @@
+{
+  "scenario": {
+    "name": "nominal",
+    "kind": "none",
+    "seed": null
+  },
+  "controller": "open_loop",
+  "status": {
+    "status": "completed",
+    "failure_time_s": null,
+    "message": null,
+    "invalid_domain_events": 0,
+    "completed_intervals": 500,
+    "planned_intervals": 500
+  },
+  "configuration": {
+    "name": "Trajectory Tracking Foundations",
+    "duration_s": 25.0,
+    "dt_s": 0.05,
+    "initial_state": [
+      0.0,
+      0.0,
+      0.5,
+      -1.5707963267948966
+    ],
+    "final_state": [
+      5.0,
+      5.0,
+      0.5,
+      -1.5707963267948966
+    ],
+    "kp_per_s2": [
+      2.0,
+      2.0
+    ],
+    "kd_per_s": [
+      2.0,
+      2.0
+    ],
+    "min_forward_speed_mps": 0.0001,
+    "actuator_limits": null,
+    "scenarios": [
+      {
+        "name": "nominal",
+        "kind": "none",
+        "seed": null
+      },
+      {
+        "name": "yaw_bias",
+        "kind": "yaw_bias",
+        "seed": null,
+        "start_s": 8.0,
+        "end_s": 12.0,
+        "yaw_rate_radps": 0.18
+      },
+      {
+        "name": "seeded",
+        "kind": "gaussian",
+        "seed": 7,
+        "speed_std_mps": 0.4472135954999579,
+        "yaw_std_radps": 0.4472135954999579
+      }
+    ],
+    "visualization": {
+      "scenario": "yaw_bias",
+      "fps": 12,
+      "duration_s": 10,
+      "snapshot_times_s": [
+        6.0,
+        10.0,
+        12.0,
+        20.0
+      ]
+    }
+  },
+  "log": "nominal__open_loop.npz"
+}

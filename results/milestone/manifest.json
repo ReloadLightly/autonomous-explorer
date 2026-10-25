@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "experiment": "Trajectory Tracking Foundations",
+  "created_utc": "2026-10-25T04:43:44.576783+00:00",
+  "package_version": "0.1.0",
+  "python": "3.13.5",
+  "numpy": "2.5.4",
+  "integrator": "RK4; zero-order-held commands/disturbances",
+  "reference_min_speed_mps": 0.137360563948689,
+  "reference_min_speed_time_s": 3.1479578794843226,
+  "reference_coefficients_tau_ascending": [
+    [
+      0.0,
+      0.0
+    ],
+    [
+      1.7763568394002505e-15,
+      -12.5
+    ],
+    [
+      14.999999999999996,
+      52.5
+    ],
+    [
+      -9.999999999999998,
+      -35.0
+    ]
+  ],
+  "state_order": [
+    "x_m",
+    "y_m",
+    "v_mps",
+    "theta_rad"
+  ],
+  "control_order": [
+    "a_mps2",
+    "omega_radps"
+  ],
+  "disturbance_order": [
+    "speed_offset_mps",
+    "yaw_rate_offset_radps"
+  ],
+  "upstream_revision": "02ee1421786b73ae4810b086cd1f59882ab972bc",
+  "source_sha256": {
+    "__init__.py": "494e447362e5b323a0a4a2d3798571888d53887eac80236e6899c150516b421e",
+    "control.py": "9447f379c981b2a593d334ace76cd4d903c5ac0c51ee476df6bd58bf6f8bdf2e",
+    "evidence.py": "a74b20aa100fb4fc53ee509573ea79fd88040adf80bddee9e33910c7e1418cec",
+    "model.py": "3574ec24540b2e3162a768149426eb3be9ab05200a9975b1c5c386bd978cad71",
+    "reference.py": "9548d47ab847e21254dd2c061f47ad447e6c6ffd0ec6b542a697e41d478946c3",
+    "simulation.py": "2e404d032ac14c4ce72e0f4d5346cf30c5cbea87b7027e8b9032a4d38375a189"
+  },
+  "runs": [
+    {
+      "name": "nominal__open_loop",
+      "scenario": "nominal",
+      "controller": "open_loop",
+      "log": "nominal__open_loop.npz",
+      "metadata": "nominal__open_loop.json"
+    },
+    {
+      "name": "nominal__feedback",
+      "scenario": "nominal",
+      "controller": "feedback",
+      "log": "nominal__feedback.npz",
+      "metadata": "nominal__feedback.json"
+    },
+    {
+      "name": "yaw_bias__open_loop",
+      "scenario": "yaw_bias",
+      "controller": "open_loop",
+      "log": "yaw_bias__open_loop.npz",
+      "metadata": "yaw_bias__open_loop.json"
+    },
+    {
+      "name": "yaw_bias__feedback",
+      "scenario": "yaw_bias",
+      "controller": "feedback",
+      "log": "yaw_bias__feedback.npz",
+      "metadata": "yaw_bias__feedback.json"
+    },
+    {
+      "name": "seeded__open_loop",
+      "scenario": "seeded",
+      "controller": "open_loop",
+      "log": "seeded__open_loop.npz",
+      "metadata": "seeded__open_loop.json"
+    },
+    {
+      "name": "seeded__feedback",
+      "scenario": "seeded",
+      "controller": "feedback",
+      "log": "seeded__feedback.npz",
+      "metadata": "seeded__feedback.json"
+    }
+  ],
+  "files_sha256": {
+    "config.json": "20a55e4f3b3f6df375f297eb7cd6ae982a5bbd40063be0a4f99ecb5c0085b4ce",
+    "integration.npz": "9f6137a94ca05ee3a5587e78c022d592b5e8009c59b3ceba335e1d3b42992e7f",
+    "metrics.json": "3c7173c161cf1b548437ea14438c66af31904f4246c9977d8ee1085029af3ea2",
+    "nominal__feedback.json": "37f8441dd2ab1a87d5cea2e039019d0fb5d9c240ee02c421c3ea639898fc048a",
+    "nominal__feedback.npz": "f3167fb0ee0f19e76f5d85ccedb3db498ce4a6360c855d18361f9a602ccb183c",
+    "nominal__open_loop.json": "d2be4ed6be4d7c682c0dfa6b5d411b97b14818db9e2efda8baca96369c037032",
+    "nominal__open_loop.npz": "13ec546b74a7bf401789bac473cc42901993e5fc964cec2dfecf91736b6ba61b",
+    "outcomes.md": "f29218a6a04e5e3cc864be75f2be8e4707af02f24e23a86afd2aae66a1ae8e36",
+    "primitives.npz": "55e0fde7e39e73f8350685aaf0627e65b62467fee87956a72ebdb0e8cb041665",
+    "seeded__feedback.json": "9fd9c38f0d39a379424b5e5550eac8ace90d8f15dd68662554e02288b01d88f8",
+    "seeded__feedback.npz": "b4ea6769a29d5a7540a91057047f669317046acb2262816468a19dde7699405d",
+    "seeded__open_loop.json": "0f9084059a235db22cab9eb87a2f471d3bb2797b2b3204373025fab9db40b214",
+    "seeded__open_loop.npz": "41a2dbaa3438610928a7e84288d613618e4c44c7203ef6fb9900a5c48d03b50e",
+    "yaw_bias__feedback.json": "2699214dc8022799f5cbe3725213a85f45a3a6f221d7ec79cefd74e6812af386",
+    "yaw_bias__feedback.npz": "8fbb0ffd6920b0e8aa2994d185fd086ec4f308096d03dcbd9f9a54146d4717c4",
+    "yaw_bias__open_loop.json": "214d947e72f5353743a5dbc1fd3ae10e21f1db6dcd4bda9629f8e18fc6f0e144",
+    "yaw_bias__open_loop.npz": "63e6f41164ff9790920994526d9802e5e3ad17758d2025ff8f787c56d33c3247",
+    "zero_speed_probe.json": "b18d1e331cfe8a9eb8115e59f831005f02e50593e26b437c6c6fa118cf706711",
+    "zero_speed_probe.npz": "5d691a4e97840d4acce32b3e148223d545127b0c21db3c5c2e390bcd72b82bfc"
+  }
+}

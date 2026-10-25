@@ -1,0 +1,37 @@
+{
+  "inspected_date": "2026-10-25",
+  "repository": "https://github.com/StanfordASL/pora-exercises",
+  "revision": "02ee1421786b73ae4810b086cd1f59882ab972bc",
+  "license_files_found": [],
+  "code_reused": false,
+  "files": {
+    "ch01/exercises/nonholonomic_wheeled_robot_dynamics.ipynb": {
+      "sha256": "97cea9bd03eeb9f8bdc8758ed08604600aac7b48c9d4f7ebae87989424e75ec9",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch01/exercises/nonholonomic_wheeled_robot_dynamics.ipynb"
+    },
+    "ch01/exercises/dynamics.py": {
+      "sha256": "703ab4224b4656855c3ece6a60fedf9985627ca9eb8a0d367112360e759e88f3",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch01/exercises/dynamics.py"
+    },
+    "ch01/numerical_integration.ipynb": {
+      "sha256": "b87423740e74f42cb2577090079fb340192c2f12cb4a6e47e08b20f98ca3d0c1",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch01/numerical_integration.ipynb"
+    },
+    "ch03/exercises/unicycle_trajectory_tracking.ipynb": {
+      "sha256": "e600be53cb5f4b8556fd998ba9b778624c52835a19b940f92c3fe67fa651e43d",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch03/exercises/unicycle_trajectory_tracking.ipynb"
+    },
+    "ch03/exercises/unicycle_utils.py": {
+      "sha256": "1ad9f1eca38513cde1a535715666b45a8561288b4680ffc77eaddcee250c79b0",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch03/exercises/unicycle_utils.py"
+    },
+    "environment.yml": {
+      "sha256": "8a8b04e0e6e8adf5044a4f3ad2c7e7676f72f2dfbcc11ac998c80a6dadff636a",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/environment.yml"
+    },
+    "README.md": {
+      "sha256": "fb75a0d8e78b271e992c995a80974610ecb57cb0657a26035dd9dfc8d433f410",
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/README.md"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "purpose": "Deliberate invalid-domain probe",
+  "initial_state": [
+    0.0,
+    0.0,
+    0.0,
+    -1.5707963267948966
+  ],
+  "status": {
+    "status": "invalid_domain",
+    "failure_time_s": 0.0,
+    "message": "v=0 m/s is outside v > 0.0001 m/s",
+    "invalid_domain_events": 1,
+    "completed_intervals": 0,
+    "planned_intervals": 500
+  }
+}

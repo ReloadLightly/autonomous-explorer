@@ -1,0 +1,2 @@
+# Matplotlib's generated SVG path formatting includes harmless trailing spaces.
+media/*.svg -whitespace linguist-generated=true
