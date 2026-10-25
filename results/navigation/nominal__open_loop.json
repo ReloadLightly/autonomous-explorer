@@ -1,0 +1,17 @@
+{
+  "scenario": {
+    "name": "nominal",
+    "kind": "none",
+    "seed": null
+  },
+  "controller": "open_loop",
+  "status": {
+    "status": "completed",
+    "failure_time_s": null,
+    "message": null,
+    "invalid_domain_events": 0,
+    "completed_intervals": 2733,
+    "planned_intervals": 2733
+  },
+  "note": "Collision audit is post hoc; it does not stop or replan the controller"
+}

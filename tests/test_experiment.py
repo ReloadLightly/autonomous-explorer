@@ -184,7 +184,8 @@ def test_curated_media_and_metrics_share_saved_results():
         assert sha256(media / name) == digest
     assert len(list(media.glob("[0-9][0-9]_*.png"))) >= 10
     assert len(list(media.glob("*.gif"))) == 2
-    readme = (repo / "README.md").read_text()
+    archive = repo / "MILESTONE_01.md"
+    readme = (archive if archive.exists() else repo / "README.md").read_text()
     table = readme.split("<!-- outcomes:start -->\n")[1].split("<!-- outcomes:end -->")[0]
     assert table == (root / "outcomes.md").read_text()
 

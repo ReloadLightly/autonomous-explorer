@@ -448,7 +448,7 @@ def static_figures(root, destination, config, logs, all_logs, outcomes):
     save_figure(fig, destination, "11_scenario_outcomes", True)
 
 
-def animation_frames(fig, update, indices, output, fps):
+def animation_frames(fig, update, indices, output, fps, review_times=None, palette_accents=None):
     frames = []
     # Fixed palette avoids per-frame colour flicker and keeps GIFs compact.
     palette = None
@@ -462,7 +462,7 @@ def animation_frames(fig, update, indices, output, fps):
             # explicitly so later amber/cyan traces cannot collapse to gray.
             colors = palette.getpalette()[: 112 * 3]
             background = np.array(ImageColor.getrgb(NAVY))
-            for accent in [AMBER, CYAN, REFERENCE, MUTED, TEXT]:
+            for accent in [AMBER, CYAN, REFERENCE, MUTED, TEXT] + (palette_accents or []):
                 foreground = np.array(ImageColor.getrgb(accent))
                 for alpha in [0.25, 0.5, 0.75, 1.0]:
                     colors.extend(
@@ -485,7 +485,8 @@ def animation_frames(fig, update, indices, output, fps):
         disposal=1,
     )
     # Retain full-size representative frames for an inspectable animation review.
-    for label, index in [("before", 6.0), ("during", 10.0), ("after", 20.0)]:
+    review_times = [6.0, 10.0, 20.0] if review_times is None else review_times
+    for label, index in zip(["before", "during", "after"], review_times, strict=True):
         # update is also used directly so these are exact recorded timestamps.
         actual_index = int(np.argmin(abs(update.times - index)))
         update(actual_index)

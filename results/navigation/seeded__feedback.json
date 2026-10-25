@@ -1,0 +1,19 @@
+{
+  "scenario": {
+    "name": "seeded",
+    "kind": "gaussian",
+    "seed": 7,
+    "speed_std_mps": 0.06,
+    "yaw_std_radps": 0.06
+  },
+  "controller": "feedback",
+  "status": {
+    "status": "completed",
+    "failure_time_s": null,
+    "message": null,
+    "invalid_domain_events": 0,
+    "completed_intervals": 2733,
+    "planned_intervals": 2733
+  },
+  "note": "Collision audit is post hoc; it does not stop or replan the controller"
+}

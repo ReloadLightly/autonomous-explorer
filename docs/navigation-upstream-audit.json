@@ -1,0 +1,19 @@
+{
+  "inspected_date": "2026-10-25",
+  "revision": "02ee1421786b73ae4810b086cd1f59882ab972bc",
+  "code_reused": false,
+  "files": {
+    "ch04/exercises/a_star.ipynb": {
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch04/exercises/a_star.ipynb",
+      "sha256": "1ff63a4f00bbf0f3293cd713e046d3fab1bdbb28706cc993d85ad01d1082a656"
+    },
+    "ch04/exercises/a_star.py": {
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch04/exercises/a_star.py",
+      "sha256": "354f3f0a451803298b0f9466a68f80447ed9d411d5ffb0394bbb84dc39dacd96"
+    },
+    "ch04/exercises/utils.py": {
+      "url": "https://github.com/StanfordASL/pora-exercises/blob/02ee1421786b73ae4810b086cd1f59882ab972bc/ch04/exercises/utils.py",
+      "sha256": "3d0b6be0b4a9a7edc720d849caf5b96aa1edeb8e68e107c402b7e59ec3dcecad"
+    }
+  }
+}

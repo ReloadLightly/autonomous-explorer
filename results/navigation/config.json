@@ -1,0 +1,164 @@
+{
+  "name": "Obstacle-Aware Navigation",
+  "world": {
+    "bounds_m": [
+      0.0,
+      12.0,
+      0.0,
+      9.0
+    ],
+    "obstacles_xyxy_m": [
+      [
+        3.0,
+        0.0,
+        4.1,
+        5.7
+      ],
+      [
+        7.3,
+        3.3,
+        8.4,
+        9.0
+      ]
+    ]
+  },
+  "start_xy_m": [
+    1.0,
+    1.0
+  ],
+  "goal_xy_m": [
+    11.0,
+    8.0
+  ],
+  "body_length_m": 0.48,
+  "outer_wheel_width_m": 0.45,
+  "search_margin_m": 0.35,
+  "reference_margin_m": 0.1,
+  "grid_resolution_m": 0.25,
+  "resolution_study_m": [
+    0.5,
+    0.25,
+    0.125
+  ],
+  "failure_cases": [
+    {
+      "name": "sealed_world",
+      "world": {
+        "bounds_m": [
+          0.0,
+          12.0,
+          0.0,
+          9.0
+        ],
+        "obstacles_xyxy_m": [
+          [
+            0.0,
+            4.2,
+            12.0,
+            4.8
+          ]
+        ]
+      },
+      "start_xy_m": [
+        1.0,
+        1.0
+      ],
+      "goal_xy_m": [
+        11.0,
+        8.0
+      ]
+    },
+    {
+      "name": "narrow_passage",
+      "world": {
+        "bounds_m": [
+          0.0,
+          8.0,
+          0.0,
+          6.0
+        ],
+        "obstacles_xyxy_m": [
+          [
+            3.6,
+            0.0,
+            4.4,
+            2.85
+          ],
+          [
+            3.6,
+            3.15,
+            4.4,
+            6.0
+          ]
+        ]
+      },
+      "start_xy_m": [
+        1.0,
+        3.0
+      ],
+      "goal_xy_m": [
+        7.0,
+        3.0
+      ]
+    }
+  ],
+  "cruise_speed_mps": 0.4,
+  "reference_max_acceleration_mps2": 0.4,
+  "reference_max_yaw_rate_radps": 1.0,
+  "dt_s": 0.02,
+  "kp_per_s2": [
+    2.0,
+    2.0
+  ],
+  "kd_per_s": [
+    2.0,
+    2.0
+  ],
+  "min_forward_speed_mps": 0.0001,
+  "actuator_limits": [
+    0.5,
+    1.2
+  ],
+  "scenarios": [
+    {
+      "name": "nominal",
+      "kind": "none",
+      "seed": null
+    },
+    {
+      "name": "yaw_bias",
+      "kind": "yaw_bias",
+      "seed": null,
+      "start_fraction": 0.35,
+      "duration_s": 4.0,
+      "yaw_rate_radps": 0.12,
+      "start_s": 19.14,
+      "end_s": 23.14
+    },
+    {
+      "name": "seeded",
+      "kind": "gaussian",
+      "seed": 7,
+      "speed_std_mps": 0.06,
+      "yaw_std_radps": 0.06
+    }
+  ],
+  "visualization": {
+    "scenario": "yaw_bias",
+    "fps": 12,
+    "duration_s": 10.0
+  },
+  "initial_state": [
+    1.0,
+    1.0,
+    0.3875586745207757,
+    1.3473197256542635
+  ],
+  "final_state": [
+    11.0,
+    8.0,
+    0.38755867452077575,
+    1.2627435457711202
+  ],
+  "duration_s": 54.660000000000004
+}

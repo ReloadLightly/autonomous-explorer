@@ -1,0 +1,129 @@
+{
+  "astar": {
+    "status": "found",
+    "expanded_nodes": 660,
+    "graph_cost_m": 22.36396103067892,
+    "path_nodes": 83
+  },
+  "dijkstra": {
+    "status": "found",
+    "expanded_nodes": 868,
+    "graph_cost_m": 22.36396103067892,
+    "path_nodes": 83
+  },
+  "shortcut_length_m": 21.183957149305606,
+  "reference_sampled_length_m": 20.87427489368614,
+  "straight_connection_free": false,
+  "rover_enclosing_radius_m": 0.32897568299191965,
+  "resolution_study": [
+    {
+      "resolution_m": 0.5,
+      "status": "found",
+      "expanded_nodes": 168,
+      "graph_cost_m": 22.656854249492376,
+      "log": "resolution_0_5.npz"
+    },
+    {
+      "resolution_m": 0.25,
+      "status": "found",
+      "expanded_nodes": 660,
+      "graph_cost_m": 22.36396103067892,
+      "log": "resolution_0_25.npz"
+    },
+    {
+      "resolution_m": 0.125,
+      "status": "found",
+      "expanded_nodes": 2513,
+      "graph_cost_m": 22.21751442127222,
+      "log": "resolution_0_125.npz"
+    }
+  ],
+  "failure_cases": [
+    {
+      "name": "sealed_world",
+      "configuration": {
+        "name": "sealed_world",
+        "world": {
+          "bounds_m": [
+            0.0,
+            12.0,
+            0.0,
+            9.0
+          ],
+          "obstacles_xyxy_m": [
+            [
+              0.0,
+              4.2,
+              12.0,
+              4.8
+            ]
+          ]
+        },
+        "start_xy_m": [
+          1.0,
+          1.0
+        ],
+        "goal_xy_m": [
+          11.0,
+          8.0
+        ]
+      },
+      "point": {
+        "status": "unreachable_on_grid",
+        "expanded_nodes": 752,
+        "log": "sealed_world__point.npz"
+      },
+      "rover": {
+        "status": "unreachable_on_grid",
+        "expanded_nodes": 630,
+        "log": "sealed_world__rover.npz"
+      }
+    },
+    {
+      "name": "narrow_passage",
+      "configuration": {
+        "name": "narrow_passage",
+        "world": {
+          "bounds_m": [
+            0.0,
+            8.0,
+            0.0,
+            6.0
+          ],
+          "obstacles_xyxy_m": [
+            [
+              3.6,
+              0.0,
+              4.4,
+              2.85
+            ],
+            [
+              3.6,
+              3.15,
+              4.4,
+              6.0
+            ]
+          ]
+        },
+        "start_xy_m": [
+          1.0,
+          3.0
+        ],
+        "goal_xy_m": [
+          7.0,
+          3.0
+        ]
+      },
+      "point": {
+        "status": "found",
+        "expanded_nodes": 25,
+        "log": "narrow_passage__point.npz"
+      },
+      "rover": {
+        "status": "unreachable_on_grid",
+        "expanded_nodes": 231,
+        "log": "narrow_passage__rover.npz"
+      }
+    }
+  ]
+}

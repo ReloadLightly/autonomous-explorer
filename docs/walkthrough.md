@@ -108,7 +108,7 @@ The open-loop plant can evolve through zero speed because it never inverts actua
 
 [`paired_runs`](../src/autonomous_explorer/simulation.py) creates one disturbance array, then passes the same realization to both simulations. Initial state, reference, grid, and horizon are identical. Both use the same optional actuator limits; the release configuration sets them to null. Requested/applied controls and saturation flags are nevertheless retained.
 
-The [experiment protocol](experiment.md) specifies all three cases and the log schema. Figures [05](../media/05_trajectory_comparison.png) and [06](../media/06_temporal_progression.png) connect full paths to time snapshots; the [diagnostic GIF](../media/diagnostic_replay.gif) connects those poses to signal histories. Figures [07–11](../README.md#diagnose-the-behavior) expose errors, states, commands, delivered disturbances, and all declared outcomes.
+The [experiment protocol](experiment.md) specifies all three cases and the log schema. Figures [05](../media/05_trajectory_comparison.png) and [06](../media/06_temporal_progression.png) connect full paths to time snapshots; the [diagnostic GIF](../media/diagnostic_replay.gif) connects those poses to signal histories. Figures [07–11](../MILESTONE_01.md#diagnose-the-behavior) expose errors, states, commands, delivered disturbances, and all declared outcomes.
 
 Rendering consumes saved files and verifies their checksums. Metrics use those same arrays. Simulation and rendering are separate commands; tests replace simulation functions with failures while exercising the plotting route. The observed feedback advantage in the declared cases is evidence about this model and protocol, not a universal claim about feedback controllers.
 

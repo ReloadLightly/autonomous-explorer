@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "milestone": 2,
+  "name": "Obstacle-Aware Navigation",
+  "created_utc": "2026-10-25T05:25:52.360883+00:00",
+  "python": "3.13.5",
+  "numpy": "2.5.4",
+  "upstream_revision": "02ee1421786b73ae4810b086cd1f59882ab972bc",
+  "source_sha256": {
+    "__init__.py": "494e447362e5b323a0a4a2d3798571888d53887eac80236e6899c150516b421e",
+    "control.py": "9447f379c981b2a593d334ace76cd4d903c5ac0c51ee476df6bd58bf6f8bdf2e",
+    "evidence.py": "a74b20aa100fb4fc53ee509573ea79fd88040adf80bddee9e33910c7e1418cec",
+    "model.py": "3574ec24540b2e3162a768149426eb3be9ab05200a9975b1c5c386bd978cad71",
+    "navigation_evidence.py": "1234b425f185ab69bafaf2289d129e51c1eda888411e072994034a97840addae",
+    "path_reference.py": "13ff6f98d99900d2a6de199032d3b9169352efb5457c709253e71e110824e72f",
+    "planning.py": "dc9a2a30580b7d335f0610c1ef9d20822be1cfee8a2fec60340803bfaa752a46",
+    "reference.py": "9548d47ab847e21254dd2c061f47ad447e6c6ffd0ec6b542a697e41d478946c3",
+    "simulation.py": "2e404d032ac14c4ce72e0f4d5346cf30c5cbea87b7027e8b9032a4d38375a189"
+  },
+  "runs": [
+    {
+      "name": "nominal__open_loop",
+      "log": "nominal__open_loop.npz",
+      "metadata": "nominal__open_loop.json",
+      "clearance": "nominal__open_loop__clearance.npz"
+    },
+    {
+      "name": "nominal__feedback",
+      "log": "nominal__feedback.npz",
+      "metadata": "nominal__feedback.json",
+      "clearance": "nominal__feedback__clearance.npz"
+    },
+    {
+      "name": "yaw_bias__open_loop",
+      "log": "yaw_bias__open_loop.npz",
+      "metadata": "yaw_bias__open_loop.json",
+      "clearance": "yaw_bias__open_loop__clearance.npz"
+    },
+    {
+      "name": "yaw_bias__feedback",
+      "log": "yaw_bias__feedback.npz",
+      "metadata": "yaw_bias__feedback.json",
+      "clearance": "yaw_bias__feedback__clearance.npz"
+    },
+    {
+      "name": "seeded__open_loop",
+      "log": "seeded__open_loop.npz",
+      "metadata": "seeded__open_loop.json",
+      "clearance": "seeded__open_loop__clearance.npz"
+    },
+    {
+      "name": "seeded__feedback",
+      "log": "seeded__feedback.npz",
+      "metadata": "seeded__feedback.json",
+      "clearance": "seeded__feedback__clearance.npz"
+    }
+  ],
+  "files_sha256": {
+    "astar.npz": "d3284d4c69ca706f833b19fe96fdab5c49dcaad4931e8710437ea0bab67da9f5",
+    "config.json": "f6e2a7edddffdfe91462b58ba2ba211c89bb7f848173b9af13bf9058c705bf5a",
+    "dijkstra.npz": "472ad57c82c03fac189bf7170c87ad503b017e788def563fec8ef455daf3c283",
+    "metrics.json": "3d3ded7612fa4c7cdf53ce6f4b30d3ac9a00dd3f504fd6de4c466ad254f11a49",
+    "narrow_passage__point.npz": "271157b67dd60feab72f560de4b25d6661ac777dc64b8dbcdbeefed36148e19b",
+    "narrow_passage__rover.npz": "6be1e32249378cc470e28f1017a372dcd7bf1539a6bf25851f2d9bc016d54aa6",
+    "nominal__feedback.json": "498b196dffadb0279766a0e70532532919c8f869ad2a7bb1281271acb45821f8",
+    "nominal__feedback.npz": "0c1146c35a8e5bcc2e11ddca442064fe9c51063e8bcf1cef261f7d34e2d146ed",
+    "nominal__feedback__clearance.npz": "b58bd0da87b47892d7b392696704e89fcfd335726bc4982d8c3203164fc1dc62",
+    "nominal__open_loop.json": "3864d08eaec9cc0c5cb528654b0292aa739ed5224dec46f3682cfa0b9fbd4db9",
+    "nominal__open_loop.npz": "888ad236d4ee04a3ae642baeee62aa705317423d874a8390d50fb6a24d305e9b",
+    "nominal__open_loop__clearance.npz": "6b861481aaa7ae55a49d0ab3ecf3b1ee5148e068d36460804dcebeddd111f307",
+    "outcomes.md": "719f541a3e43e118ec1f10180321b0ef785037a2fc1b3bb9f00726905131ea22",
+    "plan.npz": "37badf286c75ee6d127ff571c02d36064e10ceb32e430060253167c3a2e76614",
+    "planning_summary.json": "0bbb848fb1de4d5d1e8a36c86acb8fbb3ff9929ecb454163262adcdd14d92dc1",
+    "reference_certificate.json": "18e8f8c05aa8237bd7547ee06ee85b03cef827a2c5bd1b335d798e72ea5c5486",
+    "resolution_0_125.npz": "eff3ad1bf6952d87adaeff2d55398637319156282e6bc67b8fee3f8b3c27d57c",
+    "resolution_0_25.npz": "d3284d4c69ca706f833b19fe96fdab5c49dcaad4931e8710437ea0bab67da9f5",
+    "resolution_0_5.npz": "9cf98e5c24129cfb803a9fd216d07524d114409021ff11568de6840ce9a6ed54",
+    "sealed_world__point.npz": "6834ce7ba52ddce3bcb83ba78358c561e7da833d9f67a8c0ad16e26c5a3dfa00",
+    "sealed_world__rover.npz": "30848127f033a4361b9b8695fd70260d1f4547c16d59b1d3fd9a8cbd9190bbbd",
+    "seeded__feedback.json": "5ef00e9c69eaacb73e2d713a706d6baa8a5f434883b10f110c1a8564f724d830",
+    "seeded__feedback.npz": "333e77cef6eb4d60ce35edc7b49b45a44099dc11734ccb62424e354aa48dde8a",
+    "seeded__feedback__clearance.npz": "ec24e4bfd6cb5374fc014600b32c0dd0faf7811ee250a3c32428d289cf9bb94a",
+    "seeded__open_loop.json": "ccb223fc07001b7754559cabab3d5d97a9fe9188de997a783d2818aa4ace5e39",
+    "seeded__open_loop.npz": "e82bb576ac6be9807c2503d3e30efb32b78532f929f70e1a2541900d8aa6bbf0",
+    "seeded__open_loop__clearance.npz": "d461fde14cf1f970e949deaf8f5f34eeadc8d1472c1e214a842739fbc602f72d",
+    "yaw_bias__feedback.json": "b2ee1f44e39b888b9bb5daa76c64420a335b008077d68d9ee2d89885c6439044",
+    "yaw_bias__feedback.npz": "14d946379906c146ad7f285bba2d17b1ec8d33b242248c1a452f9be9b80dd214",
+    "yaw_bias__feedback__clearance.npz": "483dc464820497bda890fd818dd42da35a2c28847eab6aeb7f60d6e3f3182b89",
+    "yaw_bias__open_loop.json": "fdd6772456fc55eb3bff557170838ab2eeeb3b7f127278d7adb874c8068e1b72",
+    "yaw_bias__open_loop.npz": "6eb1aa84fd69c40c77b88ed8565898a5e77b914dbb8d0600fbc0a0eec7e2ea42",
+    "yaw_bias__open_loop__clearance.npz": "31785c381fbd0b6ddb2646772e1c8376d2a8d1c07301c0ec45f60bf33cc77bcf"
+  }
+}

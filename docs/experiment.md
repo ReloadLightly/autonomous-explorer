@@ -20,7 +20,7 @@ The Gaussian distribution is unbounded; only the yaw-bias case is bounded. Since
 
 ## Observed results
 
-The [README table](../README.md#measured-outcomes) reports position errors, generated from [`metrics.json`](../results/milestone/metrics.json). Additional metrics are:
+The [Milestone 01 table](../MILESTONE_01.md#measured-outcomes) reports position errors, generated from [`metrics.json`](../results/milestone/metrics.json). Additional metrics are:
 
 | Case / controller | RMS speed [m/s] | RMS wrapped heading [rad] | $\int a^2dt$ [m²/s³] | $\int\omega^2dt$ [rad²/s] |
 | :-- | --: | --: | --: | --: |
