@@ -4,7 +4,7 @@ This document records the published project state. It is not an independent reru
 
 ## Published milestone status
 
-Snapshot: main at 2b4fba64f88c180c2f4c44ac1a502250a9fcf0da on 2026-10-25.
+Implementation snapshot: milestone 05 at 2b4fba64f88c180c2f4c44ac1a502250a9fcf0da on 2026-10-25. Subsequent documentation updates preserve these results and improve gallery access.
 
 | Milestone | Published status | Evidence |
 | --- | --- | --- |
@@ -20,6 +20,12 @@ Snapshot: main at 2b4fba64f88c180c2f4c44ac1a502250a9fcf0da on 2026-10-25.
 ## Current implementation boundary
 
 The current mission selects among supplied candidate observation viewpoints and uses a supplied static obstacle map. Landmark positions are learned by SLAM. The project does not yet demonstrate unknown-space occupancy reconstruction or frontier discovery. Its mission and safety claims must retain the qualifications in the current README.
+
+## Cumulative visual gallery
+
+The [complete visual gallery](GALLERY.md) now collects all 40 figures and seven animations, including SVG versions and 21 retained animation review frames. The README links to it prominently and displays all seven animations across the current milestone and visual history. Append future milestones while preserving earlier gallery sections and previews.
+
+The gallery navigation update was checked on 2026-10-25: all links and section anchors resolve, all 89 referenced media assets are tracked and reachable, and all 52 media files from the earlier navigation-era commit remain unchanged. The five existing curated-gallery/provenance checks passed. This documentation check did not rerun simulation campaigns. The next implementation step remains milestone 06 below.
 
 ## Next implementation step
 

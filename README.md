@@ -2,6 +2,11 @@
 
 A wheeled-rover learning project accompanying *Principles of Robot Autonomy*. We are building toward navigation, localization, mapping, exploration, and a return home—one reproducible milestone at a time.
 
+<!-- Keep the cumulative gallery link and visual history when advancing milestones. Append new milestones to GALLERY.md without removing earlier figures. -->
+**[Complete visual gallery: all 40 figures and seven animations](GALLERY.md)**
+
+[Tracking](GALLERY.md#milestone-01-trajectory-tracking) · [Navigation](GALLERY.md#milestone-02-obstacle-aware-navigation) · [Localization](GALLERY.md#milestone-03-sensing-and-localization) · [SLAM](GALLERY.md#milestone-04-landmark-mapping-and-slam) · [Exploration](GALLERY.md#milestone-05-decision-making-and-exploration)
+
 ![An unsupervised mission continues through a sensor outage while a supervised mission waits and recovers](media/exploration/exploration_hero.gif)
 
 **Milestone 05 · Decision-Making and Viewpoint Exploration.** The rover now selects observation goals online, plans checked routes from its estimated position, builds its landmark map with SLAM, and decides when to return home. A localization-health supervisor brakes, waits for fresh observations, and replans after recovery. Persistent observation loss produces an explicit abort.
@@ -110,6 +115,38 @@ All empirical figures and replay frames use saved data. Amber is the baseline wi
 ![Per-seed model coverage and actual home error distinguish reported completion from arrival](media/exploration/06_completion_audit.png)
 
 **06 · Completion audit.** A belief-based return can end metres from home. Aborted runs do not claim arrival; they remain included.
+
+## Visual history
+
+Earlier milestones remain part of the project gallery. The [complete visual gallery](GALLERY.md) displays every figure and animation with its original explanation, SVG links, and animation review frames.
+
+### Milestone 01: Trajectory tracking
+
+![Synchronized open-loop and feedback tracking under a shared yaw disturbance](media/hero.gif)
+
+![Tracking replay synchronized with position error and control histories](media/diagnostic_replay.gif)
+
+[All 11 tracking figures and both animations](GALLERY.md#milestone-01-trajectory-tracking) · [Full walkthrough](MILESTONE_01.md)
+
+### Milestone 02: Obstacle-aware navigation
+
+![Obstacle-aware open-loop and feedback navigation with clearance failures retained](media/navigation/navigation_hero.gif)
+
+![Recorded A* and Dijkstra search expansions](media/navigation/search_replay.gif)
+
+[All 11 navigation figures and both animations](GALLERY.md#milestone-02-obstacle-aware-navigation) · [Full walkthrough](MILESTONE_02.md)
+
+### Milestone 03: Sensing and localization
+
+![Exact-state, dead-reckoning and EKF feedback during a landmark outage](media/localization/localization_hero.gif)
+
+[All six localization figures and the animation](GALLERY.md#milestone-03-sensing-and-localization) · [Full walkthrough](MILESTONE_03.md)
+
+### Milestone 04: Landmark mapping and SLAM
+
+![First-sighting mapping and joint EKF SLAM build landmark maps while moving](media/slam/slam_hero.gif)
+
+[All six SLAM figures and the animation](GALLERY.md#milestone-04-landmark-mapping-and-slam) · [Full walkthrough](MILESTONE_04.md)
 
 ## Learn and inspect
 
