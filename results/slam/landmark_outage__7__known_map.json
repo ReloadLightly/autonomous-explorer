@@ -1,0 +1,22 @@
+{
+  "scenario": {
+    "name": "landmark_outage",
+    "yaw_bias_radps": 0.08,
+    "landmark_outage_s": [
+      28.0,
+      40.0
+    ]
+  },
+  "seed": 7,
+  "mode": "known_map",
+  "status": {
+    "status": "completed",
+    "failure_time_s": null,
+    "message": null,
+    "invalid_domain_events": 0,
+    "planned_intervals": 1320,
+    "completed_intervals": 1320
+  },
+  "noise_inputs": "seed_7_inputs.npz",
+  "note": "Only known_map receives surveyed coordinates; all controllers receive estimates"
+}

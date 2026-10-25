@@ -1,0 +1,22 @@
+{
+  "scenario": {
+    "name": "landmark_outage",
+    "yaw_bias_radps": 0.12,
+    "landmark_outage_s": [
+      18.0,
+      30.0
+    ]
+  },
+  "seed": 41,
+  "mode": "oracle",
+  "status": {
+    "status": "completed",
+    "failure_time_s": null,
+    "message": null,
+    "invalid_domain_events": 0,
+    "planned_intervals": 2733,
+    "completed_intervals": 2733
+  },
+  "noise_inputs": "seed_41_inputs.npz",
+  "note": "Clearance uses truth post hoc; controller sees controller_states only"
+}

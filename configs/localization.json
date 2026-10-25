@@ -1,0 +1,25 @@
+{
+  "name": "Sensing and Localization",
+  "navigation_config": "navigation.json",
+  "seeds": [7, 19, 41],
+  "initial_estimate_offset": [0.12, -0.08, 0.02, 0.08],
+  "initial_std": [0.20, 0.20, 0.05, 0.12],
+  "process_held_std": [0.02, 0.08, 0.10],
+  "truth_disturbance_std": [0.03, 0.04],
+  "sensors": {
+    "speed_every_steps": 5,
+    "landmark_every_steps": 10,
+    "speed_std_mps": 0.025,
+    "range_std_m": 0.05,
+    "bearing_std_rad": 0.015,
+    "max_range_m": 6.0,
+    "landmarks_xy_m": [[1.0, 8.0], [5.5, 8.0], [6.0, 1.0], [11.0, 1.0], [11.5, 8.5]]
+  },
+  "scenarios": [
+    {"name": "nominal", "yaw_bias_radps": 0.0, "landmark_outage_s": null},
+    {"name": "yaw_bias", "yaw_bias_radps": 0.12, "landmark_outage_s": null},
+    {"name": "landmark_outage", "yaw_bias_radps": 0.12, "landmark_outage_s": [18.0, 30.0]}
+  ],
+  "yaw_bias_interval_s": [19.14, 23.14],
+  "visualization": {"scenario": "landmark_outage", "seed": 7, "fps": 12, "duration_s": 10.0}
+}

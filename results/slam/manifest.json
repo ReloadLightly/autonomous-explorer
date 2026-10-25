@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "milestone": 4,
+  "name": "Landmark Mapping and SLAM",
+  "created_utc": "2026-10-25T11:25:50.297416+00:00",
+  "python": "3.13.5",
+  "numpy": "2.5.4",
+  "joint_state_order": "x,y,v,theta followed by dynamic landmark x,y pairs",
+  "log_joint_order": "canonical ID order; NaN means undiscovered; full covariance at joint_indices",
+  "observation_timing": "correct, control posterior, held plant RK4, predict applied command",
+  "map_frame": "anchored by finite initial rover prior; no truth alignment in estimation or control",
+  "event_codes": {
+    "new": 1,
+    "updated": 2,
+    "revisited": 3,
+    "rejected": 4,
+    "skipped": 5
+  },
+  "runs": [
+    {
+      "name": "nominal__7__known_map",
+      "log": "nominal__7__known_map.npz",
+      "metadata": "nominal__7__known_map.json"
+    },
+    {
+      "name": "nominal__7__first_sighting",
+      "log": "nominal__7__first_sighting.npz",
+      "metadata": "nominal__7__first_sighting.json"
+    },
+    {
+      "name": "nominal__7__slam",
+      "log": "nominal__7__slam.npz",
+      "metadata": "nominal__7__slam.json"
+    },
+    {
+      "name": "landmark_outage__7__known_map",
+      "log": "landmark_outage__7__known_map.npz",
+      "metadata": "landmark_outage__7__known_map.json"
+    },
+    {
+      "name": "landmark_outage__7__first_sighting",
+      "log": "landmark_outage__7__first_sighting.npz",
+      "metadata": "landmark_outage__7__first_sighting.json"
+    },
+    {
+      "name": "landmark_outage__7__slam",
+      "log": "landmark_outage__7__slam.npz",
+      "metadata": "landmark_outage__7__slam.json"
+    },
+    {
+      "name": "nominal__19__known_map",
+      "log": "nominal__19__known_map.npz",
+      "metadata": "nominal__19__known_map.json"
+    },
+    {
+      "name": "nominal__19__first_sighting",
+      "log": "nominal__19__first_sighting.npz",
+      "metadata": "nominal__19__first_sighting.json"
+    },
+    {
+      "name": "nominal__19__slam",
+      "log": "nominal__19__slam.npz",
+      "metadata": "nominal__19__slam.json"
+    },
+    {
+      "name": "landmark_outage__19__known_map",
+      "log": "landmark_outage__19__known_map.npz",
+      "metadata": "landmark_outage__19__known_map.json"
+    },
+    {
+      "name": "landmark_outage__19__first_sighting",
+      "log": "landmark_outage__19__first_sighting.npz",
+      "metadata": "landmark_outage__19__first_sighting.json"
+    },
+    {
+      "name": "landmark_outage__19__slam",
+      "log": "landmark_outage__19__slam.npz",
+      "metadata": "landmark_outage__19__slam.json"
+    },
+    {
+      "name": "nominal__41__known_map",
+      "log": "nominal__41__known_map.npz",
+      "metadata": "nominal__41__known_map.json"
+    },
+    {
+      "name": "nominal__41__first_sighting",
+      "log": "nominal__41__first_sighting.npz",
+      "metadata": "nominal__41__first_sighting.json"
+    },
+    {
+      "name": "nominal__41__slam",
+      "log": "nominal__41__slam.npz",
+      "metadata": "nominal__41__slam.json"
+    },
+    {
+      "name": "landmark_outage__41__known_map",
+      "log": "landmark_outage__41__known_map.npz",
+      "metadata": "landmark_outage__41__known_map.json"
+    },
+    {
+      "name": "landmark_outage__41__first_sighting",
+      "log": "landmark_outage__41__first_sighting.npz",
+      "metadata": "landmark_outage__41__first_sighting.json"
+    },
+    {
+      "name": "landmark_outage__41__slam",
+      "log": "landmark_outage__41__slam.npz",
+      "metadata": "landmark_outage__41__slam.json"
+    }
+  ],
+  "replays": [
+    {
+      "name": "nominal__7__no_revisit",
+      "log": "nominal__7__no_revisit.npz",
+      "source_run": "nominal__7__slam"
+    },
+    {
+      "name": "landmark_outage__7__no_revisit",
+      "log": "landmark_outage__7__no_revisit.npz",
+      "source_run": "landmark_outage__7__slam"
+    },
+    {
+      "name": "nominal__19__no_revisit",
+      "log": "nominal__19__no_revisit.npz",
+      "source_run": "nominal__19__slam"
+    },
+    {
+      "name": "landmark_outage__19__no_revisit",
+      "log": "landmark_outage__19__no_revisit.npz",
+      "source_run": "landmark_outage__19__slam"
+    },
+    {
+      "name": "nominal__41__no_revisit",
+      "log": "nominal__41__no_revisit.npz",
+      "source_run": "nominal__41__slam"
+    },
+    {
+      "name": "landmark_outage__41__no_revisit",
+      "log": "landmark_outage__41__no_revisit.npz",
+      "source_run": "landmark_outage__41__slam"
+    }
+  ],
+  "source_sha256": {
+    "__init__.py": "494e447362e5b323a0a4a2d3798571888d53887eac80236e6899c150516b421e",
+    "control.py": "9447f379c981b2a593d334ace76cd4d903c5ac0c51ee476df6bd58bf6f8bdf2e",
+    "evidence.py": "a74b20aa100fb4fc53ee509573ea79fd88040adf80bddee9e33910c7e1418cec",
+    "localization.py": "190413315f63ffe2d22d2f5246d6653a4285599677ddc4152c6f379b33d30903",
+    "localization_evidence.py": "e7d46ac93df220e65a0054a2d7875a839d45402508cc14e13c2b6d0a618680c0",
+    "model.py": "3574ec24540b2e3162a768149426eb3be9ab05200a9975b1c5c386bd978cad71",
+    "navigation_evidence.py": "1234b425f185ab69bafaf2289d129e51c1eda888411e072994034a97840addae",
+    "path_reference.py": "13ff6f98d99900d2a6de199032d3b9169352efb5457c709253e71e110824e72f",
+    "planning.py": "dc9a2a30580b7d335f0610c1ef9d20822be1cfee8a2fec60340803bfaa752a46",
+    "reference.py": "9548d47ab847e21254dd2c061f47ad447e6c6ffd0ec6b542a697e41d478946c3",
+    "sensors.py": "2fb61a7420f407dea3c375a9c77ff23fadf6d17f7b0a6b4a515eef9d2596bb11",
+    "simulation.py": "2e404d032ac14c4ce72e0f4d5346cf30c5cbea87b7027e8b9032a4d38375a189",
+    "slam.py": "c3c84a0cb5c0fafb4e68253e14884c3449c25e211500b6158c82c7680a73329b",
+    "slam_evidence.py": "b657319ee7635f805f042698225ab9bd521dc29f59c0a7911a1ff5c810e6df10"
+  },
+  "files_sha256": {
+    "config.json": "6b64dce4eaebbf24f8be7f11dad53ad66b5baa069367eabe5d3020f2dd314b02",
+    "landmark_outage__19__first_sighting.json": "b13a8d324a76689b1bf04e230e43bf20c188f640eea73896af906668493178a9",
+    "landmark_outage__19__first_sighting.npz": "e8780c392a919c6844f6f9297dce7b241045820044803485df4e7cfd44095988",
+    "landmark_outage__19__known_map.json": "35324a459562539cf7d72fce76a349fd9e197f1515b239f5570106e701d36b23",
+    "landmark_outage__19__known_map.npz": "81252c6c5ed56b16e83391d933401677f75c47161af0a5a731c132ab604a11b4",
+    "landmark_outage__19__no_revisit.npz": "c72c96ed201f7572f80ee0e278f94c2799c66361c0c382283a6509376dfb5175",
+    "landmark_outage__19__slam.json": "50c3b3504e81305e256933edb45a9259abf04c1c027827d924a81688d3400d88",
+    "landmark_outage__19__slam.npz": "889fdfef53c9fa387cc7b5f13a582dbd356efb02522406604efdb185a6115cb2",
+    "landmark_outage__41__first_sighting.json": "a366131c87a63488ce36ea69346d10244adbc664a0a76dffb7548dd5cba27db2",
+    "landmark_outage__41__first_sighting.npz": "35db85a76cfe91744cf7036b00b775ec2944ebd9e427b80eedfe2b89e2d871b6",
+    "landmark_outage__41__known_map.json": "4f20df17f6607a684785a3593671895d203fc6ba03cb56aaa7d1dcad7c20aa31",
+    "landmark_outage__41__known_map.npz": "78fad5970142a7456534cc419e63f835e0c6cf1ec9f2991068d56b0490788c54",
+    "landmark_outage__41__no_revisit.npz": "e9836234a83b2b795cdb6fef4e8d04915a213a20aca1438591f67898508d5039",
+    "landmark_outage__41__slam.json": "f9e70f9f671a82f40b20d7d5514c3ad1863c615b7e80b8f07413a2b165c2bf49",
+    "landmark_outage__41__slam.npz": "ad2558e954e660985b1a4e16a83a2586d8fbc23246833d97bd34877c0e142511",
+    "landmark_outage__7__first_sighting.json": "61874ee623164d5714cca8820a6e0a5a7ac54945d5ede37b844b16e027a963f5",
+    "landmark_outage__7__first_sighting.npz": "6a50368b8d430a9f64bcc5a873050a123fb1c107bd7c0640eb57af32c735c9fd",
+    "landmark_outage__7__known_map.json": "8541b35406c29a4f15171d19abcdd3e08b3b70efdeaebd9a7a1f25c36ec92b4a",
+    "landmark_outage__7__known_map.npz": "59bcec1f73aed9d597f99a26e3b653e964075208995cf95f823e4b61867f8dcd",
+    "landmark_outage__7__no_revisit.npz": "52b0598f75daefb812655af973386eefc78e93ad2fb61f4afa3625971e29c95c",
+    "landmark_outage__7__slam.json": "2ab41bee2d11f65e57324d0512651ee9b60b1034162bbef66cb65796f3c047f2",
+    "landmark_outage__7__slam.npz": "c2f2508b846442d2c192e7044b1d08e220b2b28aaab4cb2a9cba6d934422f983",
+    "metrics.json": "a11fadffa356a2a7c4342e5affea75387b5f14e78be7f283989fea52cee82990",
+    "nominal__19__first_sighting.json": "5e335cde0a8d71f5da2fb86ea503768975fdaf3019a4b00e44175fcbfa2b99e6",
+    "nominal__19__first_sighting.npz": "5fbe952f7b3474ca4638feddfdee37e3b01465ec8d253afaf5495d78ff5130a7",
+    "nominal__19__known_map.json": "1c6ea91727cb5015b434f4163a7eb57dc8f3c6687e0d8b112b3789e368b1bff4",
+    "nominal__19__known_map.npz": "cda9833b843cceef92786d57a238c9a01c03b4641af2545e5531691e2da45196",
+    "nominal__19__no_revisit.npz": "3e49bf32dfba5aeb2f46c109916dc6a78fd5b285c9d35c25e40d596271ab9c3e",
+    "nominal__19__slam.json": "1a3b995683f762456f4baab2a26911ca49eb367dd95f4cd799216acfc01313ac",
+    "nominal__19__slam.npz": "e70d8162439c8894fe0f4df0c3e0a8070634fe589ee7b6e092b24f4d6d5609b2",
+    "nominal__41__first_sighting.json": "f9d2c2cbfa9de690d891f9626c34e47aae3b10491b3f70c001b2326720819ba0",
+    "nominal__41__first_sighting.npz": "4462977bfcffd510a926c4c62b5e507b2ab9239c401fe7c3b1c1f37f6f533edd",
+    "nominal__41__known_map.json": "d96f0ba95294f1b00e94698be144199aa8bfacb98a9a78878a9bb3adc72735dc",
+    "nominal__41__known_map.npz": "d4e082720efaf3b3ecad924c7c40ae43eb23ed3ac2ec9b629483f85c6d4ad9ea",
+    "nominal__41__no_revisit.npz": "75684a4061c3010dbc8eab0aa3a579a25bd940b677fe53d31f1df2cb8cfbaad7",
+    "nominal__41__slam.json": "34e8746caf92f5f168359a97717aea7f3d93ef7f0362c145b9970ef5b610a35c",
+    "nominal__41__slam.npz": "a9283541cf71be23b7d62904aec0b7ffeb1564cb337e7c88cd40b283395cc5c3",
+    "nominal__7__first_sighting.json": "4ec980f477d2e1db719763a64fe0da6b589b6565350cb25c111e62283124a707",
+    "nominal__7__first_sighting.npz": "070dc868f2084d89b10e2709dbb32cbca3806246c830a0e58a6a4fbba1d3d6c1",
+    "nominal__7__known_map.json": "f3dfb162935540c262e3233f77b2a38c52971a7572cd75a9eddfa85199edc1f5",
+    "nominal__7__known_map.npz": "ee4cd0f96bc7a0fc050bd90ec5324600686a114b58a2b9966b28801187e49b12",
+    "nominal__7__no_revisit.npz": "512eaaae1bd6cc771e7ecca32ad7ad576c7600e2eaf61a1e8c35b683c0f51d8a",
+    "nominal__7__slam.json": "cab7fda9197e72f085e4472ca0c2c2cf44402bbdcd31def0801402220e26c101",
+    "nominal__7__slam.npz": "a1c817834679280f0bcf93413cfadecf51ca69efe36e6627a01bb7f759c188e1",
+    "outcomes.md": "ccd40907764b4fe3610fbc6d12bca6eda0c8f26e4f0b08f624a0291f9bb33b47",
+    "plan.npz": "be4e33b7f8602fea7049a24480a011854ff86c076277601e2e5ef61581e56330",
+    "planning_summary.json": "0c8dbfde3423e518f904e52a3c78adc355e1ca48c8dae7c69af5befecd13449b",
+    "reference_certificate.json": "0cdb442d072519a880d5b1806d3cc358ab2b5de5ba9442b86a670f5806935751",
+    "replay_metrics.json": "5f04f46d68c18bc71983273cc33ab98eaf0becdcf1a9eeca87f2d2ff2ac6b9ed",
+    "seed_19_inputs.npz": "0e973484f9d9a4f525ab293591038e9d2b02d0278c253a29b46a947762899a5c",
+    "seed_41_inputs.npz": "467d5792c6ecf7765b13c6660508f451b7f05f19e67c20d4251889f79c82a38a",
+    "seed_7_inputs.npz": "8539811ac07458d82ce63a6dce303402c714a024e6df58cc2c43544a0bf01377",
+    "summary.md": "61ca8047d96a425661ddf8c1bfca81241bd04fb54bb94329150a0c3e344def55"
+  }
+}

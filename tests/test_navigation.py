@@ -169,7 +169,7 @@ def test_curated_navigation_provenance_and_readme_table():
         assert sha256(media / name) == digest
     assert len(list(media.glob("[0-9][0-9]_*.png"))) == 11
     assert len(list(media.glob("*.gif"))) == 2
-    readme = (ROOT / "README.md").read_text()
+    readme = (ROOT / "MILESTONE_02.md").read_text()
     table = readme.split("<!-- navigation-outcomes:start -->\n")[1].split(
         "<!-- navigation-outcomes:end -->"
     )[0]

@@ -1,4 +1,4 @@
-name: Foundations checks
+name: Rover milestone checks
 on: [push, pull_request]
 
 permissions:
@@ -19,3 +19,5 @@ jobs:
       - run: uv run --frozen pytest -q
       - run: uv run --frozen explorer verify --results results/milestone
       - run: uv run --frozen explorer plan-verify --results results/navigation
+      - run: uv run --frozen explorer localize-verify --results results/localization
+      - run: uv run --frozen explorer slam-verify --results results/slam

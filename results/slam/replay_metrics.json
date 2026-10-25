@@ -1,0 +1,62 @@
+{
+  "nominal__7__no_revisit": {
+    "mapped_landmarks": 6,
+    "final_map_rmse_m": 0.20679274352727864,
+    "first_sighting_map_rmse_m": 0.1884014435681477,
+    "map_pair_distance_rmse_m": 0.1503869182177473,
+    "new_landmarks": 6,
+    "revisit_packets": 0,
+    "first_revisit_time_s": null,
+    "rms_localization_m": 0.24205718662768036
+  },
+  "landmark_outage__7__no_revisit": {
+    "mapped_landmarks": 6,
+    "final_map_rmse_m": 1.4029336551991403,
+    "first_sighting_map_rmse_m": 1.3445769798293792,
+    "map_pair_distance_rmse_m": 1.2101084674939357,
+    "new_landmarks": 6,
+    "revisit_packets": 0,
+    "first_revisit_time_s": null,
+    "rms_localization_m": 1.710440517413634
+  },
+  "nominal__19__no_revisit": {
+    "mapped_landmarks": 6,
+    "final_map_rmse_m": 0.19578669703522028,
+    "first_sighting_map_rmse_m": 0.23014889799430455,
+    "map_pair_distance_rmse_m": 0.17354447533282463,
+    "new_landmarks": 6,
+    "revisit_packets": 0,
+    "first_revisit_time_s": null,
+    "rms_localization_m": 0.2713442762260365
+  },
+  "landmark_outage__19__no_revisit": {
+    "mapped_landmarks": 6,
+    "final_map_rmse_m": 1.8291438794320243,
+    "first_sighting_map_rmse_m": 1.7396721381730225,
+    "map_pair_distance_rmse_m": 1.5653964955853261,
+    "new_landmarks": 6,
+    "revisit_packets": 0,
+    "first_revisit_time_s": null,
+    "rms_localization_m": 2.21187373245052
+  },
+  "nominal__41__no_revisit": {
+    "mapped_landmarks": 6,
+    "final_map_rmse_m": 0.1409441188142581,
+    "first_sighting_map_rmse_m": 0.13879415414622717,
+    "map_pair_distance_rmse_m": 0.0565528550194153,
+    "new_landmarks": 6,
+    "revisit_packets": 0,
+    "first_revisit_time_s": null,
+    "rms_localization_m": 0.14622697664534115
+  },
+  "landmark_outage__41__no_revisit": {
+    "mapped_landmarks": 6,
+    "final_map_rmse_m": 1.3941411639320216,
+    "first_sighting_map_rmse_m": 1.2183755301073123,
+    "map_pair_distance_rmse_m": 1.1796384391886237,
+    "new_landmarks": 6,
+    "revisit_packets": 0,
+    "first_revisit_time_s": null,
+    "rms_localization_m": 1.0472083394592107
+  }
+}

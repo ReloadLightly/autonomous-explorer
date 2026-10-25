@@ -1,0 +1,19 @@
+{
+  "scenario": {
+    "name": "nominal",
+    "yaw_bias_radps": 0.0,
+    "landmark_outage_s": null
+  },
+  "seed": 19,
+  "mode": "ekf",
+  "status": {
+    "status": "completed",
+    "failure_time_s": null,
+    "message": null,
+    "invalid_domain_events": 0,
+    "planned_intervals": 2733,
+    "completed_intervals": 2733
+  },
+  "noise_inputs": "seed_19_inputs.npz",
+  "note": "Clearance uses truth post hoc; controller sees controller_states only"
+}

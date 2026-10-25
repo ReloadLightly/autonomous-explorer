@@ -1,4 +1,4 @@
-"""Reproduce, simulate, render, or verify either milestone (plan-* for navigation)."""
+"""Reproduce, simulate, render, or verify tracking, navigation, localization, and SLAM."""
 
 import argparse
 import json
@@ -9,11 +9,53 @@ from .evidence import run_experiments, verify_evidence
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     commands = ["reproduce", "simulate", "render", "verify"]
-    parser.add_argument("command", choices=commands + ["plan-" + name for name in commands])
+    parser.add_argument(
+        "command",
+        choices=commands
+        + [prefix + name for prefix in ["plan-", "localize-", "slam-"] for name in commands],
+    )
     parser.add_argument("--config")
     parser.add_argument("--results")
     parser.add_argument("--media")
     args = parser.parse_args()
+    if args.command.startswith("slam-"):
+        from .slam_evidence import run_slam, verify_slam
+
+        config = args.config or "configs/slam.json"
+        results = args.results or "results/slam"
+        media = args.media or "media/slam"
+        command = args.command.removeprefix("slam-")
+        if command in {"simulate", "reproduce"}:
+            print(json.dumps(run_slam(config, results), indent=2))
+        if command in {"render", "reproduce"}:
+            from .slam_render import render_slam
+
+            render_slam(results, media)
+        if command == "verify":
+            manifest = verify_slam(results)
+            print(
+                f"Verified SLAM: {len(manifest['runs'])} executions and {len(manifest['replays'])} counterfactual replays."
+            )
+        return
+    if args.command.startswith("localize-"):
+        from .localization_evidence import run_localization, verify_localization
+
+        config = args.config or "configs/localization.json"
+        results = args.results or "results/localization"
+        media = args.media or "media/localization"
+        command = args.command.removeprefix("localize-")
+        if command in {"simulate", "reproduce"}:
+            print(json.dumps(run_localization(config, results), indent=2))
+        if command in {"render", "reproduce"}:
+            from .localization_render import render_localization
+
+            render_localization(results, media)
+        if command == "verify":
+            manifest = verify_localization(results)
+            print(
+                f"Verified localization: {len(manifest['runs'])} runs, estimator replays, and clearance."
+            )
+        return
     planning = args.command.startswith("plan-")
     args.config = args.config or (
         "configs/navigation.json" if planning else "configs/milestone.json"

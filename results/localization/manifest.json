@@ -1,0 +1,239 @@
+{
+  "schema_version": 1,
+  "milestone": 3,
+  "name": "Sensing and Localization",
+  "created_utc": "2026-10-25T11:02:30.852241+00:00",
+  "python": "3.13.5",
+  "numpy": "2.5.4",
+  "state_order": [
+    "x_m",
+    "y_m",
+    "v_mps",
+    "theta_rad"
+  ],
+  "process_held_error_order": [
+    "acceleration_mps2",
+    "speed_offset_mps",
+    "yaw_rate_radps"
+  ],
+  "random_generator": "PCG64; SeedSequence.spawn: plant, speed sensor, landmark sensor",
+  "integrator": "RK4; zero-order-held applied commands and plant disturbances",
+  "missing_observations": "NaN with explicit landmark_visible mask; never a fabricated zero",
+  "observation_timing": "correct at t[k], control posterior, hold/integrate, predict to t[k+1]",
+  "source_sha256": {
+    "__init__.py": "494e447362e5b323a0a4a2d3798571888d53887eac80236e6899c150516b421e",
+    "control.py": "9447f379c981b2a593d334ace76cd4d903c5ac0c51ee476df6bd58bf6f8bdf2e",
+    "evidence.py": "a74b20aa100fb4fc53ee509573ea79fd88040adf80bddee9e33910c7e1418cec",
+    "localization.py": "190413315f63ffe2d22d2f5246d6653a4285599677ddc4152c6f379b33d30903",
+    "localization_evidence.py": "e7d46ac93df220e65a0054a2d7875a839d45402508cc14e13c2b6d0a618680c0",
+    "model.py": "3574ec24540b2e3162a768149426eb3be9ab05200a9975b1c5c386bd978cad71",
+    "navigation_evidence.py": "1234b425f185ab69bafaf2289d129e51c1eda888411e072994034a97840addae",
+    "path_reference.py": "13ff6f98d99900d2a6de199032d3b9169352efb5457c709253e71e110824e72f",
+    "planning.py": "dc9a2a30580b7d335f0610c1ef9d20822be1cfee8a2fec60340803bfaa752a46",
+    "reference.py": "9548d47ab847e21254dd2c061f47ad447e6c6ffd0ec6b542a697e41d478946c3",
+    "sensors.py": "2fb61a7420f407dea3c375a9c77ff23fadf6d17f7b0a6b4a515eef9d2596bb11",
+    "simulation.py": "2e404d032ac14c4ce72e0f4d5346cf30c5cbea87b7027e8b9032a4d38375a189"
+  },
+  "runs": [
+    {
+      "name": "nominal__7__oracle",
+      "log": "nominal__7__oracle.npz",
+      "metadata": "nominal__7__oracle.json"
+    },
+    {
+      "name": "nominal__7__dead_reckoning",
+      "log": "nominal__7__dead_reckoning.npz",
+      "metadata": "nominal__7__dead_reckoning.json"
+    },
+    {
+      "name": "nominal__7__ekf",
+      "log": "nominal__7__ekf.npz",
+      "metadata": "nominal__7__ekf.json"
+    },
+    {
+      "name": "yaw_bias__7__oracle",
+      "log": "yaw_bias__7__oracle.npz",
+      "metadata": "yaw_bias__7__oracle.json"
+    },
+    {
+      "name": "yaw_bias__7__dead_reckoning",
+      "log": "yaw_bias__7__dead_reckoning.npz",
+      "metadata": "yaw_bias__7__dead_reckoning.json"
+    },
+    {
+      "name": "yaw_bias__7__ekf",
+      "log": "yaw_bias__7__ekf.npz",
+      "metadata": "yaw_bias__7__ekf.json"
+    },
+    {
+      "name": "landmark_outage__7__oracle",
+      "log": "landmark_outage__7__oracle.npz",
+      "metadata": "landmark_outage__7__oracle.json"
+    },
+    {
+      "name": "landmark_outage__7__dead_reckoning",
+      "log": "landmark_outage__7__dead_reckoning.npz",
+      "metadata": "landmark_outage__7__dead_reckoning.json"
+    },
+    {
+      "name": "landmark_outage__7__ekf",
+      "log": "landmark_outage__7__ekf.npz",
+      "metadata": "landmark_outage__7__ekf.json"
+    },
+    {
+      "name": "nominal__19__oracle",
+      "log": "nominal__19__oracle.npz",
+      "metadata": "nominal__19__oracle.json"
+    },
+    {
+      "name": "nominal__19__dead_reckoning",
+      "log": "nominal__19__dead_reckoning.npz",
+      "metadata": "nominal__19__dead_reckoning.json"
+    },
+    {
+      "name": "nominal__19__ekf",
+      "log": "nominal__19__ekf.npz",
+      "metadata": "nominal__19__ekf.json"
+    },
+    {
+      "name": "yaw_bias__19__oracle",
+      "log": "yaw_bias__19__oracle.npz",
+      "metadata": "yaw_bias__19__oracle.json"
+    },
+    {
+      "name": "yaw_bias__19__dead_reckoning",
+      "log": "yaw_bias__19__dead_reckoning.npz",
+      "metadata": "yaw_bias__19__dead_reckoning.json"
+    },
+    {
+      "name": "yaw_bias__19__ekf",
+      "log": "yaw_bias__19__ekf.npz",
+      "metadata": "yaw_bias__19__ekf.json"
+    },
+    {
+      "name": "landmark_outage__19__oracle",
+      "log": "landmark_outage__19__oracle.npz",
+      "metadata": "landmark_outage__19__oracle.json"
+    },
+    {
+      "name": "landmark_outage__19__dead_reckoning",
+      "log": "landmark_outage__19__dead_reckoning.npz",
+      "metadata": "landmark_outage__19__dead_reckoning.json"
+    },
+    {
+      "name": "landmark_outage__19__ekf",
+      "log": "landmark_outage__19__ekf.npz",
+      "metadata": "landmark_outage__19__ekf.json"
+    },
+    {
+      "name": "nominal__41__oracle",
+      "log": "nominal__41__oracle.npz",
+      "metadata": "nominal__41__oracle.json"
+    },
+    {
+      "name": "nominal__41__dead_reckoning",
+      "log": "nominal__41__dead_reckoning.npz",
+      "metadata": "nominal__41__dead_reckoning.json"
+    },
+    {
+      "name": "nominal__41__ekf",
+      "log": "nominal__41__ekf.npz",
+      "metadata": "nominal__41__ekf.json"
+    },
+    {
+      "name": "yaw_bias__41__oracle",
+      "log": "yaw_bias__41__oracle.npz",
+      "metadata": "yaw_bias__41__oracle.json"
+    },
+    {
+      "name": "yaw_bias__41__dead_reckoning",
+      "log": "yaw_bias__41__dead_reckoning.npz",
+      "metadata": "yaw_bias__41__dead_reckoning.json"
+    },
+    {
+      "name": "yaw_bias__41__ekf",
+      "log": "yaw_bias__41__ekf.npz",
+      "metadata": "yaw_bias__41__ekf.json"
+    },
+    {
+      "name": "landmark_outage__41__oracle",
+      "log": "landmark_outage__41__oracle.npz",
+      "metadata": "landmark_outage__41__oracle.json"
+    },
+    {
+      "name": "landmark_outage__41__dead_reckoning",
+      "log": "landmark_outage__41__dead_reckoning.npz",
+      "metadata": "landmark_outage__41__dead_reckoning.json"
+    },
+    {
+      "name": "landmark_outage__41__ekf",
+      "log": "landmark_outage__41__ekf.npz",
+      "metadata": "landmark_outage__41__ekf.json"
+    }
+  ],
+  "files_sha256": {
+    "config.json": "dcc91e57249cf769363156d71b65b10e523c39e71deda996909dd9b5e8d8df0f",
+    "landmark_outage__19__dead_reckoning.json": "1eac75fc37559f90968487fd0fd4c859b5df1793f521661fe59d67688ff526b7",
+    "landmark_outage__19__dead_reckoning.npz": "2d6a9bd3c3d927b32d2cd60a3ef0bfb1ca937784f4c101281c0f7ee49cde1d72",
+    "landmark_outage__19__ekf.json": "dd954d374332a820b256a66b58db69a5f3a9626431875de74dc4a626a73b880f",
+    "landmark_outage__19__ekf.npz": "ff652827110bb30210172c3f97d66ce60ceb3ed9664565251d9beede3accc7b5",
+    "landmark_outage__19__oracle.json": "ce0508c84e1712f115885b815af7d61fe9d7449ee9eb142aabe0d54b2860864f",
+    "landmark_outage__19__oracle.npz": "cadb0824bd383040995afbbce610fdd2bfd42547bc7406db3c8d1b479931fe32",
+    "landmark_outage__41__dead_reckoning.json": "3d96a842f96f760863abe324a6d8571e514dd6eb9451b1f7f60a59feb2edd8ff",
+    "landmark_outage__41__dead_reckoning.npz": "0580783754f83a4204ed12124840fac82913ab280cd69558b4eb3b54ee9b2540",
+    "landmark_outage__41__ekf.json": "68f0f15eaccd122c8ede81b6ece6d1b440c76ce9b613e8798fec9ef44cc6ef1d",
+    "landmark_outage__41__ekf.npz": "791f33378635018020dab35a8c96c10d3ed2aa4d295c1207048ddc19439b7294",
+    "landmark_outage__41__oracle.json": "8c30414362e8ecff613bae025288ff2b9b961a765f5a924a058ed3de0fd3733a",
+    "landmark_outage__41__oracle.npz": "fbc70719925064bdf766a4fe2bfa2e531d614fc0a91851f914215e2753bf46b0",
+    "landmark_outage__7__dead_reckoning.json": "4f668d410934c879557f8b862b60b00f726660c0321db70dbb3024b540a94bae",
+    "landmark_outage__7__dead_reckoning.npz": "243cbbc5215ac75629b1d38e3d2c7172956bf2a204d89be046dd6d68c29f0a7f",
+    "landmark_outage__7__ekf.json": "e4880785e18f34c273c620c82eb0aea2a29699736b2e8a1eab06ac25f8d8f1cf",
+    "landmark_outage__7__ekf.npz": "7da05959f57c103a068c499de3ba0aca1e23c597e33498807830c91e88c6867a",
+    "landmark_outage__7__oracle.json": "b62112cba724e266b1687e025bed8ccddfb5aa64c8f5890aeae5b5aaae31b994",
+    "landmark_outage__7__oracle.npz": "dcc34d8b4374334bf194cc8fd244805554e1510a982ebb14751810b77ffe53e9",
+    "metrics.json": "183f8294ba8865d04c0bd17d5073cd6f6e1539c5854c0f588056e1a9fc71e6b5",
+    "nominal__19__dead_reckoning.json": "df1f48dfc33e900fc592b17508a0457e9f9ea2e8e4e98c5075bf492997fc21e8",
+    "nominal__19__dead_reckoning.npz": "59d2446148ef0d4f2e117654be337674b7d2c81c5ee2091368328f48237980ec",
+    "nominal__19__ekf.json": "615b1f236102265cc6db6cbd0e18ec0aa2af8bcefea32d21bb3e9259bdd7bd9a",
+    "nominal__19__ekf.npz": "97c8126f2d1b59eb06319b52e0582b8d3bb24b25dca2ba4826238653a302b67c",
+    "nominal__19__oracle.json": "05d2b3e3cba434bc51a0ef964dd3423d7c44124bfbc60fc370e6115dfdc990b7",
+    "nominal__19__oracle.npz": "013eef31e1d54ac48c1317ae730f907718713d23ce0e4e1e95a4825c9828c4de",
+    "nominal__41__dead_reckoning.json": "7196907cd3d1ed0c83fd6f1193b2252312c9e5bdd480a086301784cb527feae5",
+    "nominal__41__dead_reckoning.npz": "696793576c84818729f610c1a18f49a0a473edf430bf779135b859687fe6fd34",
+    "nominal__41__ekf.json": "ad3e89c16453b132b72ffc31e88476201c58ebc57d5f17f5d1c917f46cbf1304",
+    "nominal__41__ekf.npz": "11d894b996bb882a5a3d1fd61058986cf959797bcfb607e9f262fb8f0085d87c",
+    "nominal__41__oracle.json": "945ac51cdc27b5b6a5df220fd7f9a1644e2daa9deb64399fb77f81dab5d0e6cb",
+    "nominal__41__oracle.npz": "394bfc09c14883e84c90a6fe32e71f210dae2549794d16aebda7d513a8d05669",
+    "nominal__7__dead_reckoning.json": "4e828d136e440961699ceb1a4b2b9dc9f79474ddf8d90b095afbf4b5dd0481de",
+    "nominal__7__dead_reckoning.npz": "ab4405a49c103c039cf88b93cd2eafed03580bae8950aeff919b7cf59c8a154b",
+    "nominal__7__ekf.json": "74843e0c536cdc72f56221fcdb927eb5ba28f48fb42bbe95b4c62fc9adf36ee0",
+    "nominal__7__ekf.npz": "93c7ed4bb54af1816a210461c6d0c195bcaa1bbc0520981fa7faae4e34b54a24",
+    "nominal__7__oracle.json": "7957b6b2f0af0c2de0360d8d62a8ac91a91922fcce31d9335eb2fdaec0efca96",
+    "nominal__7__oracle.npz": "4d84b63c696afde1824cd3dcf7187f6f13e07d0143d712844b979eaf168267e0",
+    "outcomes.md": "6184073ff3f9543ad776abd2dc95254e2e51c6ec34edf514653e44951309c59c",
+    "plan.npz": "9908a8ca3c2600131deb412c9885bfd5358c26760aab9270db7d90611f3017f3",
+    "reference_certificate.json": "18e8f8c05aa8237bd7547ee06ee85b03cef827a2c5bd1b335d798e72ea5c5486",
+    "seed_19_inputs.npz": "e270e010386af304de86b0467a766d6fbd4e5675025e41cd37b08e992aca7966",
+    "seed_41_inputs.npz": "4e75049a20994ff9b7951dbef83d16c858f31a741f2ec4baa4076ab491d51121",
+    "seed_7_inputs.npz": "7c9285fffff865193b1df1705630b9c867a9e6dff4a609879fbe2e873332adae",
+    "summary.md": "f5548fc50b7c6920b28551b6504d2316a24383257b3ffd1dd57f84bcaba82be5",
+    "yaw_bias__19__dead_reckoning.json": "4f85663f915ab67a5dd9e07be1e970c59ad2e38b38a076924fcb8c8ba8360f05",
+    "yaw_bias__19__dead_reckoning.npz": "70705dbc8115f635f287e4e138f59c0feb3a7fd3c5afe473d7add5c1e9ad7e13",
+    "yaw_bias__19__ekf.json": "5b91b51ad0d6807a1ba1b8fe4733916a2b8b735ebfffd31651747fa1b3bf8c0b",
+    "yaw_bias__19__ekf.npz": "8c29686bfeca51a9e021ea37bdd02e77d759ee29ef2f75ab9cc75a9f51018e0a",
+    "yaw_bias__19__oracle.json": "65d19c4e72b860d49925d6e7192a46badb436ffeb6df8a60790f003abcbf76d0",
+    "yaw_bias__19__oracle.npz": "d71f2153ec9616b2edb83c47be6e8dbdeb20cff7b385ea05c9016c1e6942f2b6",
+    "yaw_bias__41__dead_reckoning.json": "83e22aee73f64a917904f407eba62884aa0d26f30ed399c60b9dc3719fc24812",
+    "yaw_bias__41__dead_reckoning.npz": "d77dd2c5d1f456450f6551aa9873dfbc7cfa218d42d287e422e2539a394c9e10",
+    "yaw_bias__41__ekf.json": "c2c22dea3eb964ce041d2b6ab584ca6939272f6b00260b6f8698005ea20006a9",
+    "yaw_bias__41__ekf.npz": "7ed1e06d79ffa52c0874cbf4aeed9e427cea444958c8e92dd9d5f7e670db01d0",
+    "yaw_bias__41__oracle.json": "14a083b6001580ae827da29210e6cbe09853faed32261a3dce7eae0cfba014a0",
+    "yaw_bias__41__oracle.npz": "1072e5aa8c4a3bcb228a9947ab1d6a535c8215ca11379dc13c5ef4c3ce494deb",
+    "yaw_bias__7__dead_reckoning.json": "60482e80f42655361ca652c328835341510473e21c2aa4e5b38175121461ea1d",
+    "yaw_bias__7__dead_reckoning.npz": "fe2492522b1d412d2d0c7700120f94165833bd0f52e34d29832bb29ae4712182",
+    "yaw_bias__7__ekf.json": "ff54b07ef58ddf45ea891f892e34a894651c8a01bb6384f9b39f36016aecf0e2",
+    "yaw_bias__7__ekf.npz": "28d4f7127f5c865cde287d985778d50993f10d5679a9a1beaae2522d907731c2",
+    "yaw_bias__7__oracle.json": "9041413f5b9e3329ffb31428d7e3683e9cdce2f7b7852956b0f16b4c416166c0",
+    "yaw_bias__7__oracle.npz": "f3c1bd4dbe22f5fa412a342eb303186aca270e6698b1c985c4cf7eba17121570"
+  }
+}

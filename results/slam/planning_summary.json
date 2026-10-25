@@ -1,0 +1,50 @@
+[
+  {
+    "start": [
+      1.5,
+      1.0
+    ],
+    "goal": [
+      10.5,
+      1.0
+    ],
+    "graph_cost_m": 9.0,
+    "expanded_nodes": 37
+  },
+  {
+    "start": [
+      10.5,
+      1.0
+    ],
+    "goal": [
+      10.5,
+      8.5
+    ],
+    "graph_cost_m": 7.5,
+    "expanded_nodes": 31
+  },
+  {
+    "start": [
+      10.5,
+      8.5
+    ],
+    "goal": [
+      1.5,
+      8.5
+    ],
+    "graph_cost_m": 9.0,
+    "expanded_nodes": 37
+  },
+  {
+    "start": [
+      1.5,
+      8.5
+    ],
+    "goal": [
+      1.5,
+      1.0
+    ],
+    "graph_cost_m": 7.5,
+    "expanded_nodes": 31
+  }
+]

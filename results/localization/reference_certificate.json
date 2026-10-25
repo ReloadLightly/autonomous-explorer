@@ -1,0 +1,39 @@
+{
+  "corner_rounding": [
+    {
+      "waypoint_index": 1,
+      "tangent_distance_m": 0.309375,
+      "halvings": 2
+    },
+    {
+      "waypoint_index": 2,
+      "tangent_distance_m": 0.309375,
+      "halvings": 2
+    },
+    {
+      "waypoint_index": 3,
+      "tangent_distance_m": 0.309375,
+      "halvings": 2
+    },
+    {
+      "waypoint_index": 4,
+      "tangent_distance_m": 0.309375,
+      "halvings": 2
+    }
+  ],
+  "uniform_time_scale": 1.032101785606033,
+  "unscaled_bounds": {
+    "min_speed_mps": 0.3126174791772168,
+    "max_speed_mps": 0.4000000000000004,
+    "max_abs_acceleration_mps2": 0.2012777752335602,
+    "max_abs_yaw_rate_radps": 1.0320530891669843
+  },
+  "bounds": {
+    "min_speed_mps": 0.30289403965487083,
+    "max_speed_mps": 0.3875586745207762,
+    "max_abs_acceleration_mps2": 0.18895168303144838,
+    "max_abs_yaw_rate_radps": 0.9999528181815713
+  },
+  "continuity": "C1 position; piecewise acceleration with jumps at segment joins",
+  "collision_certificate": "Each quadratic control-point AABB or straight segment is free"
+}

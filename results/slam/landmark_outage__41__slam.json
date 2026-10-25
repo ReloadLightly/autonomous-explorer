@@ -1,0 +1,22 @@
+{
+  "scenario": {
+    "name": "landmark_outage",
+    "yaw_bias_radps": 0.08,
+    "landmark_outage_s": [
+      28.0,
+      40.0
+    ]
+  },
+  "seed": 41,
+  "mode": "slam",
+  "status": {
+    "status": "invalid_domain",
+    "failure_time_s": 53.45,
+    "message": "Physical state left the forward-speed domain",
+    "invalid_domain_events": 1,
+    "planned_intervals": 1320,
+    "completed_intervals": 1069
+  },
+  "noise_inputs": "seed_41_inputs.npz",
+  "note": "Only known_map receives surveyed coordinates; all controllers receive estimates"
+}
