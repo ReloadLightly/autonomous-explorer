@@ -27,6 +27,8 @@ The [complete visual gallery](GALLERY.md) now collects all 40 figures and seven 
 
 The gallery navigation update was checked on 2026-10-25: all links and section anchors resolve, all 89 referenced media assets are tracked and reachable, and all 52 media files from the earlier navigation-era commit remain unchanged. The five existing curated-gallery/provenance checks passed. This documentation check did not rerun simulation campaigns. The next implementation step remains milestone 06 below.
 
+The [2026-10-26 progress audit](docs/progress-audit.md) adds a README record of every completed step and direct links to all 40 figures and seven animations. All 89 media assets and 210 manifest-listed evidence files passed checksum/tracking checks, all PNGs and GIF frames decoded, all five saved-evidence verifiers passed, and the complete 113-test suite passed. Retained independent reproduction outputs match release evidence; no new simulation campaign was run. `python scripts/audit_progress.py` now checks documentation/anchor integrity and complete visual coverage. The old local CI branch and ignored development directories contain no additional completed implementation awaiting publication.
+
 ## Next implementation step
 
 Continue with the README's unknown-space occupancy mapping and exploration milestone rather than restarting an earlier stage.
@@ -43,6 +45,8 @@ Later design choices remain provisional until this milestone's evidence exists; 
 
 - [x] Root AGENTS.md records the standing expectations for verified progress pushes, accurate GitHub About metadata, visual evidence, and continuity.
 - [x] This continuation file reflects the already published milestones.
-- [ ] GitHub About description and topics verified. They were empty when inspected on 2026-10-25. The connected file API does not expose repository metadata updates; complete this via an authenticated metadata-capable connection and update this status afterward.
+- [x] GitHub About description and all nine capability topics updated and verified on 2026-10-26 using authenticated GitHub CLI reads after the metadata update. The previous metadata blocker is resolved; see the [audit record](docs/progress-audit.md).
+- [x] Every completed milestone has a README step/evidence record and complete cumulative-gallery coverage, with a reusable documentation/media audit.
+- [ ] Optional GitHub Actions workflow activation. The complete template remains in `docs/checks-workflow.yml`; the original token lacked workflow scope. Local verification is complete and no remote CI success is claimed.
 
 For every completed task, update the relevant milestone, evidence links, blockers, and next step, then follow AGENTS.md's publication and verification instructions.
